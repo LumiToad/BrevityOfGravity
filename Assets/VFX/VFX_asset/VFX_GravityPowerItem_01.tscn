@@ -1,0 +1,262 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_spark03_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_blueGravity_01.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_spark04_01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_light02_01.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_flare01_01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_trace01_01.png" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.131818 ), 0.0, 0.0, 0, 0, Vector2( 0.370787, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.606742, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.151136 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 5
+emission_ring_radius = 3.0
+emission_ring_inner_radius = 2.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.3
+initial_velocity_random = 0.2
+angular_velocity = 14.26
+angular_velocity_random = 0.37
+radial_accel = -3.96
+radial_accel_random = 0.45
+tangential_accel = 3.96
+tangential_accel_random = 0.29
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 0.44
+scale_curve = SubResource( 5 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=24]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=25]
+emission_shape = 5
+emission_ring_radius = 3.0
+emission_ring_inner_radius = 2.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.3
+initial_velocity_random = 0.2
+angular_velocity = 14.26
+angular_velocity_random = 0.37
+radial_accel = -3.96
+radial_accel_random = 0.45
+tangential_accel = 3.96
+tangential_accel_random = 0.29
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 0.44
+scale_curve = SubResource( 5 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+emission_shape = 5
+emission_ring_radius = 4.0
+emission_ring_inner_radius = 2.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.2
+angular_velocity = 14.26
+angular_velocity_random = 0.37
+radial_accel = -3.96
+radial_accel_random = 0.45
+tangential_accel = 3.96
+tangential_accel_random = 0.29
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 0.44
+scale_curve = SubResource( 5 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 0.632955 ), 0.0, 0.0, 0, 0, Vector2( 0.370787, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.606742, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.151136 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=26]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+spread = 180.0
+gravity = Vector3( 0, 3, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 0.2
+angular_velocity = 14.26
+angular_velocity_random = 0.37
+radial_accel_random = 0.45
+tangential_accel = 0.5
+angle = 360.0
+angle_random = 1.0
+scale = 8.0
+scale_random = 0.44
+scale_curve = SubResource( 26 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=16]
+
+[sub_resource type="Curve" id=27]
+_data = [ Vector2( 0, 0.632955 ), 0.0, 0.0, 0, 0, Vector2( 0.370787, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.606742, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.151136 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=28]
+curve = SubResource( 27 )
+
+[sub_resource type="ParticlesMaterial" id=23]
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, -3, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 0.2
+angular_velocity = 14.26
+angular_velocity_random = 0.37
+radial_accel_random = 0.45
+tangential_accel = 0.5
+angle = 360.0
+angle_random = 1.0
+scale = 8.0
+scale_random = 0.44
+scale_curve = SubResource( 28 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=19]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="Curve" id=29]
+_data = [ Vector2( 0, 0.632955 ), 0.0, 0.0, 0, 0, Vector2( 0.370787, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.606742, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.151136 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=30]
+curve = SubResource( 29 )
+
+[sub_resource type="ParticlesMaterial" id=20]
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.3
+initial_velocity_random = 0.2
+angular_velocity = 14.26
+angular_velocity_random = 0.37
+radial_accel_random = 0.45
+tangential_accel = 0.5
+angle = 360.0
+angle_random = 1.0
+scale = 4.0
+scale_random = 0.44
+scale_curve = SubResource( 30 )
+color_ramp = ExtResource( 2 )
+
+[node name="VFX_GravityPowerItem_01" type="Spatial"]
+
+[node name="Particles2" type="Particles" parent="."]
+transform = Transform( 0, -0.0355802, -0.999367, -1, 0, 0, 0, 0.999367, -0.0355802, 0, 0, 0 )
+material_override = SubResource( 10 )
+amount = 100
+lifetime = 1.2
+randomness = 0.94
+process_material = SubResource( 11 )
+draw_pass_1 = SubResource( 9 )
+
+[node name="Particles10" type="Particles" parent="."]
+transform = Transform( 0, -0.0355802, -0.999367, -1, 0, 0, 0, 0.999367, -0.0355802, 0, 0, 0 )
+material_override = SubResource( 24 )
+amount = 100
+lifetime = 1.2
+randomness = 0.94
+process_material = SubResource( 25 )
+draw_pass_1 = SubResource( 9 )
+
+[node name="Particles5" type="Particles" parent="."]
+transform = Transform( 1.91069e-15, -0.0355802, -0.999367, -1, -4.36837e-08, 1.55526e-09, -4.37114e-08, 0.999367, -0.0355802, 0, 0, 0 )
+material_override = SubResource( 21 )
+amount = 100
+lifetime = 1.2
+randomness = 0.94
+process_material = SubResource( 22 )
+draw_pass_1 = SubResource( 9 )
+
+[node name="Particles3" type="Particles" parent="."]
+material_override = SubResource( 17 )
+amount = 100
+lifetime = 0.8
+randomness = 0.94
+process_material = SubResource( 18 )
+draw_pass_1 = SubResource( 16 )
+
+[node name="Particles6" type="Particles" parent="."]
+material_override = SubResource( 17 )
+amount = 100
+lifetime = 0.8
+randomness = 0.94
+process_material = SubResource( 23 )
+draw_pass_1 = SubResource( 16 )
+
+[node name="Particles4" type="Particles" parent="."]
+material_override = SubResource( 19 )
+amount = 100
+lifetime = 0.8
+randomness = 0.94
+process_material = SubResource( 20 )
+draw_pass_1 = SubResource( 16 )

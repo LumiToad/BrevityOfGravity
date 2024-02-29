@@ -1,0 +1,226 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Bush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantGroundLarge2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/TempleStoneSmall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BuildingBlockLarge1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/BushShade2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BuildingBlockLargeBroken.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownSquareHalf.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrokenLarge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantYellow.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BuildingBlockMedium.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrokenLarge2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Plant8Blue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownSquare2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownWithoutBrokenPiece.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BrokenPillarStanding.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownSquare.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantGroundLarge1.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownBrokenTriangle.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantSmallYellow.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone2.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownBroken2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrownSquareSmall1.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/plant9.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Plant8Green.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Bush2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/TempleStoneCuboid.tscn" type="PackedScene" id=27]
+
+[node name="TempleWithBrokenWallSet" type="Spatial"]
+
+[node name="BrokenPillarStanding" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.689, 0.80007, -4.1 )
+
+[node name="BrokenPillarStanding2" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, -1.78814e-07, 0, 1.78814e-07, 1, 0, 0, 0, 1, -14.411, 0.80007, -4.1 )
+
+[node name="BrokenPillarStanding3" parent="." instance=ExtResource( 16 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.38901, 14.2001, -4.1 )
+
+[node name="Bush" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.289, 1.40007, 0.3 )
+
+[node name="Bush13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.211, 7.00951e-05, 3.6 )
+
+[node name="Bush2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 18.189, 0.80007, -0.4 )
+
+[node name="Bush5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -17.511, 0.80007, -0.4 )
+
+[node name="Bush16" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.510986, 0.80007, 7.4 )
+
+[node name="Bush17" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -7.211, -1.59993, 7.4 )
+
+[node name="Bush3" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.789, 3.30007, 8.7 )
+
+[node name="Stone2" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1.7, 0, 2.94449, 0, 3.4, 0, -2.94449, 0, 1.7, 4.38901, -0.79993, 3.2 )
+
+[node name="BuildingBlockLarge1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41101, 14.9313, 4.2 )
+
+[node name="BuildingBlockLarge2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.789, 13.6313, 4.2 )
+
+[node name="BuildingBlockLargeBroken" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.9407e-08, 0, -8.9407e-08, -1, -9.51099, 16.8313, 4.8 )
+
+[node name="BuildingBlockLargeBroken2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.9407e-08, 0, -8.9407e-08, -1, -1.91101, 1.60007, 4.8 )
+
+[node name="BuildingBlockMedium" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.111, 15.4313, 6 )
+
+[node name="BuildingBlockMedium6" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.91101, -1.09993, 3.1 )
+
+[node name="BuildingBlockMedium5" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51099, 14.4313, 6 )
+
+[node name="BuildingBlockMedium7" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.289, 12.9313, 6 )
+
+[node name="BuildingBlockMedium3" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.411011, 15.6001, 6 )
+
+[node name="BuildingBlockMedium4" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.411011, 12.6313, 6 )
+
+[node name="BuildingBlockMedium8" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.01099, 15.9313, 6 )
+
+[node name="BuildingBlockMedium9" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.311, -0.59993, 6 )
+
+[node name="FloorPanelGreySquareSmall1" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.289, 0.90007, -6 )
+
+[node name="FloorPanelGreySquareSmall3" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88901, 0.90007, -2.1 )
+
+[node name="FloorPanelGreySquareSmall4" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889893, 0.90007, -4.4 )
+
+[node name="FloorPanelGreySquareSmall5" parent="." instance=ExtResource( 23 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.91101, 0.90007, -4.7 )
+
+[node name="FloorPanelGreySquareSmall2" parent="." instance=ExtResource( 23 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.789, 0.90007, -7.2 )
+
+[node name="FloorPanelSquareHalf" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48901, 1.00007, -5.2 )
+
+[node name="FloorPanelSquareHalf2" parent="." instance=ExtResource( 22 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.48901, 1.00007, -2.1 )
+
+[node name="FloorPanelSquareHalf3" parent="." instance=ExtResource( 22 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.11099, 1.00007, -3.5 )
+
+[node name="FloorPanelBrokenLarge2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.989, 0.90007, -4.3 )
+
+[node name="FloorPanelBrokenLarge3" parent="." instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.611, 0.90007, -4.3 )
+
+[node name="FloorPanelBrownWithoutBrokenPiece" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.489, 0.90007, -5.4 )
+
+[node name="FloorPanelBrownWithoutBrokenPiece2" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.211, 0.90007, -3.7 )
+
+[node name="FloorPanelBrokenTriangle" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.989, 0.90007, -4.8 )
+
+[node name="FloorPanelBrokenTriangle2" parent="." instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.789, 0.90007, -6.4 )
+
+[node name="FloorPanelBrokenTriangle3" parent="." instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.311, 0.90007, -5.6 )
+
+[node name="FloorPanelBrokenTriangle4" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.811, 0.90007, -3.1 )
+
+[node name="FloorPanelGreyBroken2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08899, 0.90007, -5.1 )
+
+[node name="FloorPanelGreySquare2" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.189, 0.90007, -7.6 )
+
+[node name="FloorPanelGreySquare3" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08899, 0.90007, -4.5 )
+
+[node name="FloorPanelGreySquare4" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.911011, 0.90007, -6 )
+
+[node name="FloorPanelGreySquare5" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48901, 0.90007, -4.5 )
+
+[node name="FloorPanelBrokenLarge" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109863, 0.90007, -3 )
+
+[node name="TempleStoneCuboid" parent="." instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.211, 1.60007, 5.4 )
+
+[node name="TempleStoneCuboid2" parent="." instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.688995, 11.9313, 5.4 )
+
+[node name="TempleStoneCuboid3" parent="." instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.311, 12.9313, 5.4 )
+
+[node name="FloorPanelGreySquare6" parent="." instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.61099, 1.00007, -4.5 )
+
+[node name="FloorPanelGreySquare1" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51099, 0.90007, -3.7 )
+
+[node name="TempleStoneSmall" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.811005, 1.50007, 3.9 )
+
+[node name="TempleStoneSmall2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.606218, 0, -0.35, 0, 0.7, 0, 0.35, 0, -0.606218, -8.711, 0.20007, 4.3 )
+
+[node name="TempleStoneSmall3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.946607, 0, -0.253643, 0, 0.98, 0, 0.253643, 0, 0.946607, -7.91101, 0.20007, 4.9 )
+
+[node name="Plant8Blue4" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.588989, 0.75007, -6.9 )
+
+[node name="Plant8Blue2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.711, 1.00007, -1.1 )
+
+[node name="Plant8Blue3" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.0905867, 0, -0.338074, 0, 0.35, 0, 0.338074, 0, 0.0905867, -22.411, 1.00007, -3.3 )
+
+[node name="Plant8Green3" parent="." instance=ExtResource( 25 )]
+transform = Transform( 0.4, 0, 0.69282, 0, 0.8, 0, -0.69282, 0, 0.4, -5.711, 0.90007, -1.6 )
+
+[node name="plant9" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.389, 0.80007, -2.4 )
+
+[node name="plant11" parent="." instance=ExtResource( 24 )]
+transform = Transform( 0.181173, 0, 0.676148, 0, 0.7, 0, -0.676148, 0, 0.181173, 2.48901, 0.80007, -0.7 )
+
+[node name="PlantGroundLarge1" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.089, 0.80007, -4.4 )
+
+[node name="PlantGroundLarge5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.811, 1.00007, -1.8 )
+
+[node name="PlantSmallYellow" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.589, 1.00007, -2.8 )
+
+[node name="PlantYellow3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -17.311, 0.60007, -2.5 )
+
+[node name="PlantYellow4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -17.311, 0.60007, -2.5 )
+
+[node name="Stone1" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1.39934, 0, -5.22242, 0, 5.40665, 0, 5.22242, 0, 1.39934, 25.249, -12.922, 8.0451 )

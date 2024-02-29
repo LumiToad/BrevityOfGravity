@@ -1,0 +1,56 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://EnvironmentBlurry.tres" type="Environment" id=1]
+[ext_resource path="res://scenes/GameCode/Menu/AudioSettingsMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GameCode/Menu/MainMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/GameCode/InGameUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GameCode/Menu/VideoSettingsMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/GameCode/Menu/SettingsMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/GameCode/Menu/PauseMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/GameCode/ScreenFade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/GameCode/Menu/DialogUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/GameCode/Menu/TutorialUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_mouse_01.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/GameCode/Menu/SettingsSave.gd" type="Script" id=12]
+[ext_resource path="res://scenes/GameCode/Menu/AchievementGalleryUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/GameCode/Menu/ControlUI.tscn" type="PackedScene" id=14]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 12 )
+
+[node name="InGameUI" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="TutorialUI" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="MainMenu" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="AchievementGalleryUI" parent="." instance=ExtResource( 13 )]
+visible = false
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="ControlUI" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="VideoSettingsMenu" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="AudioSettingsMenu" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource( 7 )]
+visible = false
+blurryEnvironment = ExtResource( 1 )
+
+[node name="ScreenFade" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="DialogUI" parent="." instance=ExtResource( 9 )]
+mouse_filter = 2
+
+[node name="VFXMouse" parent="." instance=ExtResource( 11 )]
+z_index = 2

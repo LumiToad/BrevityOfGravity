@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/3D/Materials/Yellow.tres" type="Material" id=1]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_Tree_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/3D/Materials/Tree.tres" type="Material" id=3]
+[ext_resource path="res://Assets/3D/Meshes/EnvironmentDecoration/MESH_Tree_01.obj" type="ArrayMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[node name="TreeShade2" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+material/1 = ExtResource( 1 )
+material/2 = ExtResource( 3 )

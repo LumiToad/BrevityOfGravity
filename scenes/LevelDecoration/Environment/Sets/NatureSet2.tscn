@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/MushroomBig.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/MushroomSmall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/BushShade2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BuildingBlockLargeBroken.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelsGrey2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantGroundLarge1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/WeirdPlant.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Bush.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/plant9.tscn" type="PackedScene" id=12]
+
+[node name="NatureSet2" type="Spatial"]
+
+[node name="Bush22" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9, -0.700001, 4.6 )
+
+[node name="Bush23" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -12.1, -0.700001, 8.5 )
+
+[node name="Bush28" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.800009, -0.500002, 8.4 )
+
+[node name="BuildingBlockLargeBroken7" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.284701, 1.19886e-07, 1.06252, 9.61651e-08, 1.1, -9.83477e-08, -1.06252, 6.74341e-08, -0.284701, 9.4, -2.055, 5.37 )
+
+[node name="PlantGroundLarge1" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7, 0.1, 4.5 )
+
+[node name="plant9" parent="PlantGroundLarge1" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1 )
+
+[node name="plant10" parent="PlantGroundLarge1" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1, 0, -0.9 )
+
+[node name="WeirdPlant" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 0.200001, 1 )
+
+[node name="WeirdPlant2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.3, 0, -0.519615, 0, 0.6, 0, 0.519615, 0, 0.3, -15.1, 0.200001, 2 )
+
+[node name="Tree" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.71551, 0, 0.4131, 0, 0.8262, 0, -0.4131, 0, -0.71551, -11.5, -1.2, 15.4 )
+
+[node name="Stone6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -11, 0.0999983, 4.5 )
+
+[node name="Stone1" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7, -0.100001, 5.7 )
+
+[node name="FloorPanelsGrey2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, -3.4, -1 )
+
+[node name="FloorPanelsGrey3" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.8, -3.4, 5.1 )
+
+[node name="MushroomBig8" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.09119, 0, -0.629999, 0, 1.26, 0, 0.629999, 0, -1.09119, 13.8775, -0.100002, 7.31433 )
+
+[node name="MushroomBig10" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.09119, 0, -0.629999, 0, 1.26, 0, 0.629999, 0, -1.09119, -11.9225, -0.100002, 4.11433 )
+
+[node name="MushroomSmall14" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.09119, 0, -0.629999, 0, 1.26, 0, 0.629999, 0, -1.09119, 13.4225, -0.100002, 7.28567 )
+
+[node name="MushroomBig9" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.611067, 0, 0.3528, 0, 0.7056, 0, -0.3528, 0, -0.611067, 8.80674, 1.1, 4.51432 )
+
+[node name="MushroomSmall15" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.611067, 0, 0.3528, 0, 0.7056, 0, -0.3528, 0, -0.611067, 8.69325, 1.1, 4.28566 )
+
+[node name="MushroomSmall16" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.182623, 0, 0.681557, 0, 0.7056, 0, -0.681557, 0, 0.182623, 9.99325, 1.1, 5.58566 )
+
+[node name="MushroomSmall17" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.23741, 0, 0.886024, 0, 0.91728, 0, -0.886024, 0, 0.23741, 9.59325, 1.1, 5.28566 )
+
+[node name="MushroomSmall18" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.23741, 0, 0.886024, 0, 0.91728, 0, -0.886024, 0, 0.23741, 9.59325, 1.1, 7.18566 )
+
+[node name="Bush30" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.21244, 0, 0.7, 0, 1.4, 0, -0.7, 0, 1.21244, 4.49999, -0.700001, 6.2 )

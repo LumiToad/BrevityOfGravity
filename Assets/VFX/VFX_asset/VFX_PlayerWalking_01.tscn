@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_fire02_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_brownGround_01.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_Scripts/VFX_PlayerWalking_01.gd" type="Script" id=3]
+
+[sub_resource type="StreamTexture" id=4]
+flags = 23
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = SubResource( 4 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.797727 ), 0.0, 0.0, 0, 0, Vector2( 0.353933, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.640449, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.497727 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.05
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+radial_accel = 0.5
+radial_accel_random = 0.54
+angle = 360.0
+angle_random = 1.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 8 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0, 0.854545 ), 0.0, 0.0, 0, 0, Vector2( 0.353933, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.601124, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.4 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+radial_accel = 0.5
+radial_accel_random = 0.54
+angle = 360.0
+angle_random = 1.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 10 )
+color_ramp = ExtResource( 2 )
+
+[node name="VFX_PlayerWalking" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="dust" type="Particles" parent="."]
+material_override = SubResource( 1 )
+amount = 4
+lifetime = 0.5
+randomness = 1.0
+local_coords = false
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="spark" type="Particles" parent="."]
+material_override = SubResource( 5 )
+lifetime = 0.25
+randomness = 1.0
+local_coords = false
+process_material = SubResource( 18 )
+draw_pass_1 = SubResource( 3 )

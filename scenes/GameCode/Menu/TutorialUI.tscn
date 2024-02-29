@@ -1,0 +1,761 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Assets/2D/UI/UI_ingame/UI_PC-Left-Click-On_02.png" type="Texture" id=1]
+[ext_resource path="res://Assets/2D/UI/UI_ingame/UI_PC-Right-Click-On_02.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Data/SpriteSheet/SPRITESHEET_KeyBoardButtons.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Assets/2D/UI/UI_ingame/UI_PC-Space_01.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Data/SpriteSheet/SPRITESHEET_JoyButtons.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://Assets/2D/UI/UI_ingame/UI_PC-Click-Off_01.png" type="Texture" id=6]
+[ext_resource path="res://Assets/2D/UI/UI_ingame/UI_PC-Space_02.png" type="Texture" id=9]
+[ext_resource path="res://scenes/GameCode/Menu/TutorialUI.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Mouse",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "KeyboardSpace",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=14]
+resource_name = "AButtonLong"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Button5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Button5:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/Button5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CenterContainer/Control/Button5:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 157.586, 174.853 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "AButtonShort"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Button5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Button5:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/Button5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CenterContainer/Control/Button5:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 157.586, 174.853 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "DPADJoyAxisLR"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Button1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Button1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/JoyAxis:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CenterContainer/Control/JoyAxis:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer/Control/Button4:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 10 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CenterContainer/Control/Button4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CenterContainer/Control/JoyAxis:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 35, 0 ), Vector2( -35, 0 ), Vector2( -35, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "KeyboardArrows"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/KeyboardArrowsAD1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/KeyboardArrowsAD2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/KeyboardArrowsAD3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CenterContainer/Control/KeyboardArrowsAD4:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer/Control/KeyboardArrowsAD1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CenterContainer/Control/KeyboardArrowsAD2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CenterContainer/Control/KeyboardArrowsAD3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CenterContainer/Control/KeyboardArrowsAD4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "KeyboardSpaceLong"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/KeyboardSpace:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/KeyboardSpace:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "KeyboardSpaceShort"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/KeyboardSpace:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/KeyboardSpace:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "L1L2"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Button1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Button1:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1722.16, 349.706, 1722.16, 349.706, 1722.16 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/Button4:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CenterContainer/Control/Button4:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1176.27, 304.437, 1176.27, 304.437, 1176.27 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer/Control/Button4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CenterContainer/Control/Button1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "MouseGravityChange"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Mouse:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Mouse:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 0, 2 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "MouseStaffAim"
+length = 2.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Mouse:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 0.277392, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 90, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Mouse:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/Mouse:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "R1R2+R3"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CenterContainer/Control/Button5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer/Control/Button4:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CenterContainer/Control/Button1:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CenterContainer/Control/Button1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CenterContainer/Control/Button4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CenterContainer/Control/Button5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CenterContainer/Control/Button5:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ), Vector2( -30, -20 ), Vector2( 0, 0 ), Vector2( 30, -20 ), Vector2( 0, -40 ), Vector2( 0, -40 ), Vector2( -30, -20 ), Vector2( 0, 0 ), Vector2( 30, -20 ), Vector2( 0, -40 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CenterContainer/Control/Button4:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 415.873, 568.099, 415.873, 568.099, 415.873 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CenterContainer/Control/Button1:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1351.18, 568.099, 1351.18, 568.099, 1351.18 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.486275, 0.486275, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="TutorialUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_top = 0.719
+anchor_right = 1.0
+anchor_bottom = 0.948
+
+[node name="Control" type="Control" parent="CenterContainer"]
+margin_left = 960.0
+margin_top = 123.0
+margin_right = 960.0
+margin_bottom = 123.0
+
+[node name="Mouse" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 72.1293, 0 )
+scale = Vector2( 0.397, 0.397 )
+frames = SubResource( 5 )
+animation = "Mouse"
+frame = 2
+
+[node name="KeyboardArrowsAD1" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( -180, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 3 )
+animation = "KeyboardArrowsAD"
+
+[node name="KeyboardArrowsAD2" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( -60, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 3 )
+animation = "KeyboardArrowsAD"
+frame = 2
+
+[node name="KeyboardArrowsAD3" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 60, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 3 )
+animation = "KeyboardArrowsAD"
+frame = 3
+
+[node name="KeyboardArrowsAD4" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 180, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 3 )
+animation = "KeyboardArrowsAD"
+frame = 1
+
+[node name="KeyboardSpace" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 0, -52 )
+scale = Vector2( 0.343748, 0.343748 )
+frames = SubResource( 7 )
+animation = "KeyboardSpace"
+
+[node name="JoyAxis" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( -27.979, 0 )
+scale = Vector2( 0.397, 0.397 )
+frames = ExtResource( 5 )
+animation = "Controller"
+frame = 1
+
+[node name="Button1" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( -180, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 5 )
+animation = "Controller"
+frame = 3
+
+[node name="Button2" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( -60, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 5 )
+animation = "Controller"
+frame = 7
+
+[node name="Button3" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 60, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 5 )
+animation = "Controller"
+frame = 5
+
+[node name="Button4" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 180, 0 )
+scale = Vector2( 0.351707, 0.351707 )
+frames = ExtResource( 5 )
+animation = "Controller"
+frame = 6
+
+[node name="Button5" type="AnimatedSprite" parent="CenterContainer/Control"]
+visible = false
+position = Vector2( 0, -40 )
+scale = Vector2( 0.343748, 0.343748 )
+frames = ExtResource( 5 )
+animation = "Controller"
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/AButtonLong = SubResource( 14 )
+anims/AButtonShort = SubResource( 15 )
+anims/DPADJoyAxisLR = SubResource( 12 )
+anims/KeyboardArrows = SubResource( 8 )
+anims/KeyboardSpaceLong = SubResource( 9 )
+anims/KeyboardSpaceShort = SubResource( 10 )
+anims/L1L2 = SubResource( 16 )
+anims/MouseGravityChange = SubResource( 11 )
+anims/MouseStaffAim = SubResource( 3 )
+anims/R1R2+R3 = SubResource( 17 )

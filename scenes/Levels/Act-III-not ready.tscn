@@ -1,0 +1,1645 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://scenes/GameCode/Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LevelGeometry/FloorTriple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GameCode/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LevelGeometry/FloorCornerLeft.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelGeometry/FloorCornerRight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelGeometry/CamStopWall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/GameCode/Level.gd" type="Script" id=7]
+[ext_resource path="res://scenes/LevelDecoration/BG.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/LevelGeometry/WallfillCornerRight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/LevelGeometry/WallfillCornerLeft.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Objects/GravityBlockCuboid.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/LevelGeometry/WallfillTriple.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Objects/SpikesTriple.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Objects/GravityBlockCube.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Objects/MovingPlatformTriple.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/Objects/CoinSpline.gd" type="Script" id=17]
+[ext_resource path="res://scenes/Enemys/EnemyPatrolling.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/Objects/Coin.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/LevelGeometry/PlatformSingle.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/GameCode/LevelGoal.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/Enemys/EnemyGravityTurret.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/GameCode/CameraZone.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/Objects/ChainAnchor.tscn" type="PackedScene" id=24]
+[ext_resource path="res://GB_Cuboid_SpikeL.tscn" type="PackedScene" id=25]
+
+[sub_resource type="Curve3D" id=1]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -23.75, 0.5, 0, 0, 0, 0, 0, 0, 0, -5, 0.5, 0 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=2]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -3.14225, 2.99015, 0, 1.625, -0.225, 0, -1.625, 0.225, 0, -7, 9.75, 0, 0, 0, 0, 0, 0, 0, -12.3107, 8.3951, 0 ),
+"tilts": PoolRealArray( 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=3]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -79.4696, 0.677537, 0.000198364, 0, 0, 0, 0, 0, 0, -103.975, 0.633855, 0.000259399 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[node name="Act-III-1" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.25, 0 )
+playerMaxSpeed = 17.5
+playerGravity = -1.15
+jumpForceReset = 7.7
+gravityFlipSelf = true
+hasStaff = true
+
+[node name="Camera" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -37 )
+current = true
+fov = 45.0
+borderRangeY = 6.5
+
+[node name="Objects" type="Spatial" parent="."]
+
+[node name="GravityBlockContainer" type="Spatial" parent="Objects"]
+
+[node name="GravityBlockCuboid3" parent="Objects/GravityBlockContainer" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -67, 0, 0 )
+
+[node name="SpikesTriple" parent="Objects/GravityBlockContainer/GravityBlockCuboid3" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -8.74228e-08, -8.74228e-08, 8.74228e-08, 1, 1.25, 7.5, 1.09278e-07 )
+
+[node name="SpikesTriple2" parent="Objects/GravityBlockContainer/GravityBlockCuboid3" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -8.74228e-08, -8.74228e-08, 8.74228e-08, 1, 1.25, 4.5, 1.09278e-07 )
+
+[node name="SpikesTriple3" parent="Objects/GravityBlockContainer/GravityBlockCuboid3" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -8.74228e-08, -8.74228e-08, 8.74228e-08, 1, 1.25, 1.5, 1.09277e-07 )
+
+[node name="GravityBlockCuboid4" parent="Objects/GravityBlockContainer" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -91.25, 13, 0 )
+isStartGravityFlipped = true
+
+[node name="GravityBlockCuboid2" parent="Objects/GravityBlockContainer" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.75, -2, 0 )
+isStartGravityFlipped = true
+
+[node name="GravityBlockCube" parent="Objects/GravityBlockContainer" instance=ExtResource( 15 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.5, -2, 0 )
+
+[node name="ChainAnchor" parent="Objects/GravityBlockContainer" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 0, 0 )
+attachedObject = ExtResource( 25 )
+numberOfLoops = 4
+
+[node name="MovingPlattformContainer" type="Spatial" parent="Objects"]
+
+[node name="MovingPlatformTriple" parent="Objects/MovingPlattformContainer" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.25, 9.5, 0 )
+curve = SubResource( 1 )
+duration = 4.0
+
+[node name="SpikeContainer" type="Spatial" parent="Objects"]
+
+[node name="SpikesTriple" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -25.5, 22, 0 )
+
+[node name="SpikesTriple2" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 22, 0 )
+
+[node name="SpikesTriple3" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -31.5, 22, 0 )
+
+[node name="SpikesTriple4" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -34.5, 22, 0 )
+
+[node name="SpikesTriple5" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.25, 22, 0 )
+
+[node name="SpikesTriple6" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -40.25, 22, 0 )
+
+[node name="SpikesTriple7" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -83.75, 22, 0 )
+
+[node name="SpikesTriple8" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -86.75, 22, 0 )
+
+[node name="SpikesTriple9" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -89.75, 22, 0 )
+
+[node name="SpikesTriple10" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -92.75, 22, 0 )
+
+[node name="SpikesTriple11" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -95.5, 22, 0 )
+
+[node name="SpikesTriple12" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -98.5, 22, 0 )
+
+[node name="SpikesTriple13" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -99, 6, 0 )
+
+[node name="SpikesTriple15" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -105, 6, 0 )
+
+[node name="SpikesTriple14" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -102, 6, 0 )
+
+[node name="SpikesTriple16" parent="Objects/SpikeContainer" instance=ExtResource( 14 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -105.5, 8, 0 )
+
+[node name="DeathZoneContainer" type="Spatial" parent="Objects"]
+
+[node name="Coins" type="Spatial" parent="Objects"]
+
+[node name="CoinSpline" type="Spatial" parent="Objects/Coins"]
+script = ExtResource( 17 )
+coinItem = ExtResource( 19 )
+
+[node name="Path" type="Path" parent="Objects/Coins/CoinSpline"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0 )
+curve = SubResource( 2 )
+
+[node name="PathFollow" type="PathFollow" parent="Objects/Coins/CoinSpline/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14225, 2.99015, 0 )
+rotation_mode = 0
+loop = false
+
+[node name="CoinSpline2" type="Spatial" parent="Objects/Coins"]
+script = ExtResource( 17 )
+coinItem = ExtResource( 19 )
+
+[node name="Path" type="Path" parent="Objects/Coins/CoinSpline2"]
+curve = SubResource( 3 )
+
+[node name="PathFollow" type="PathFollow" parent="Objects/Coins/CoinSpline2/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.4696, 0.677537, 0.000198364 )
+rotation_mode = 0
+loop = false
+
+[node name="CamerazoneContainer" type="Spatial" parent="Objects"]
+
+[node name="CameraZone" parent="Objects/CamerazoneContainer" instance=ExtResource( 23 )]
+transform = Transform( 22.932, 0, 0, 0, 18.04, 0, 0, 0, 1, -86.25, 8.5, 0 )
+isStaticCamera = true
+
+[node name="EnemyContainer" type="Spatial" parent="Objects"]
+
+[node name="EnemyPatrolling" parent="Objects/EnemyContainer" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 2.25, 0 )
+speed = 2
+walkingDistance = 10.0
+
+[node name="EnemyGravityTurret" parent="Objects/EnemyContainer" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73, -2, -0.25 )
+cooldown = 1.0
+
+[node name="ChainContainer" type="Spatial" parent="Objects"]
+
+[node name="BlobsContainer" type="Spatial" parent="Objects"]
+
+[node name="LevelGeometryContainer" type="Spatial" parent="Objects"]
+
+[node name="FloorTriple" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+
+[node name="FloorTriple2" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -4, 0 )
+
+[node name="FloorTriple3" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -4, 0 )
+
+[node name="FloorTriple4" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -4, 0 )
+
+[node name="FloorTriple9" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -2, 0 )
+
+[node name="FloorTriple16" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -2, 0 )
+
+[node name="FloorTriple5" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 24, 0 )
+
+[node name="FloorTriple6" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 20, 0 )
+
+[node name="FloorTriple7" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 20, 0 )
+
+[node name="FloorTriple8" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 20, 0 )
+
+[node name="FloorTriple10" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -4, 0 )
+
+[node name="FloorTriple11" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -4, 0 )
+
+[node name="FloorTriple12" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -4, 0 )
+
+[node name="FloorTriple13" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 16, 0 )
+
+[node name="FloorTriple14" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 16, 0 )
+
+[node name="FloorTriple15" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 16, 0 )
+
+[node name="FloorCornerLeft" parent="Objects/LevelGeometryContainer" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -2, 0 )
+
+[node name="FloorCornerLeft2" parent="Objects/LevelGeometryContainer" instance=ExtResource( 4 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 20, 0 )
+
+[node name="FloorCornerRight" parent="Objects/LevelGeometryContainer" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -2, 0 )
+
+[node name="FloorTriple17" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 24, 0 )
+
+[node name="FloorTriple18" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 24, 0 )
+
+[node name="FloorTriple19" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 24, 0 )
+
+[node name="FloorTriple20" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -2, 0 )
+
+[node name="FloorTriple21" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -2, 0 )
+
+[node name="FloorTriple22" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -4, 0 )
+
+[node name="FloorTriple23" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -4, 0 )
+
+[node name="FloorTriple24" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 24, 0 )
+
+[node name="FloorTriple25" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 24, 0 )
+
+[node name="FloorTriple26" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -4, 0 )
+
+[node name="FloorTriple27" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -4, 0 )
+
+[node name="PlatformSingle" parent="Objects/LevelGeometryContainer" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 6.75, 0 )
+
+[node name="FloorTriple28" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 24, 0 )
+
+[node name="FloorTriple29" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 24, 0 )
+
+[node name="FloorTriple30" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 24, 0 )
+
+[node name="FloorCornerLeft4" parent="Objects/LevelGeometryContainer" instance=ExtResource( 4 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -98.25, 6, 0 )
+
+[node name="FloorTriple31" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -103.5, 6, 0 )
+
+[node name="FloorTriple32" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, 6, 0 )
+
+[node name="FloorTriple33" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, 6, 0 )
+
+[node name="FloorTriple34" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 24, 0 )
+
+[node name="FloorTriple35" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 24, 0 )
+
+[node name="FloorTriple36" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 24, 0 )
+
+[node name="FloorTriple37" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, 6, 0 )
+
+[node name="FloorTriple38" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 24, 0 )
+
+[node name="FloorTriple39" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 24, 0 )
+
+[node name="FloorTriple40" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, 6, 0 )
+
+[node name="FloorCornerLeft3" parent="Objects/LevelGeometryContainer" instance=ExtResource( 4 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 16, 0 )
+
+[node name="FloorTriple41" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -4, 0 )
+
+[node name="FloorTriple42" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -4, 0 )
+
+[node name="FloorTriple43" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -4, 0 )
+
+[node name="FloorTriple44" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 16, 0 )
+
+[node name="FloorTriple45" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 16, 0 )
+
+[node name="FloorTriple46" parent="Objects/LevelGeometryContainer" instance=ExtResource( 2 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 16, 0 )
+
+[node name="WallfillContainer" type="Spatial" parent="Objects"]
+
+[node name="WallfillTriple" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -6.11959e-07, 36, 0 )
+
+[node name="WallfillTriple2" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.37114e-07, 34, 0 )
+
+[node name="WallfillTriple3" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -2.62268e-07, 32, 0 )
+
+[node name="WallfillTriple4" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -8.74227e-08, 30, 0 )
+
+[node name="WallfillTriple5" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 8.74229e-08, 28, 0 )
+
+[node name="WallfillTriple6" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 2.62268e-07, 26, 0 )
+
+[node name="WallfillTriple7" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 4.37114e-07, 24, 0 )
+
+[node name="WallfillTriple8" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 6.11959e-07, 22, 0 )
+
+[node name="WallfillTriple9" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 36, 0 )
+
+[node name="WallfillTriple10" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 34, 0 )
+
+[node name="WallfillTriple11" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 32, 0 )
+
+[node name="WallfillTriple12" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 30, 0 )
+
+[node name="WallfillTriple13" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 28, 0 )
+
+[node name="WallfillTriple14" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 26, 0 )
+
+[node name="WallfillTriple15" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 24, 0 )
+
+[node name="WallfillTriple16" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -9, 22, 0 )
+
+[node name="WallfillTriple17" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 36, 0 )
+
+[node name="WallfillTriple18" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 34, 0 )
+
+[node name="WallfillTriple19" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 32, 0 )
+
+[node name="WallfillTriple20" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 30, 0 )
+
+[node name="WallfillTriple21" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 28, 0 )
+
+[node name="WallfillTriple22" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 26, 0 )
+
+[node name="WallfillTriple23" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 24, 0 )
+
+[node name="WallfillTriple24" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -18, 22, 0 )
+
+[node name="WallfillTriple33" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 32, 0 )
+
+[node name="WallfillTriple34" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 30, 0 )
+
+[node name="WallfillTriple35" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 28, 0 )
+
+[node name="WallfillTriple36" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 26, 0 )
+
+[node name="WallfillTriple37" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 24, 0 )
+
+[node name="WallfillTriple38" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 22, 0 )
+
+[node name="WallfillTriple39" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 20, 0 )
+
+[node name="WallfillTriple40" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 28.5, 18, 0 )
+
+[node name="WallfillTriple41" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 32, 0 )
+
+[node name="WallfillTriple42" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 30, 0 )
+
+[node name="WallfillTriple43" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 28, 0 )
+
+[node name="WallfillTriple44" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 26, 0 )
+
+[node name="WallfillTriple45" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 24, 0 )
+
+[node name="WallfillTriple46" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 22, 0 )
+
+[node name="WallfillTriple47" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 20, 0 )
+
+[node name="WallfillTriple48" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 19.5, 18, 0 )
+
+[node name="WallfillTriple49" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 32, 0 )
+
+[node name="WallfillTriple50" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 30, 0 )
+
+[node name="WallfillTriple51" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 28, 0 )
+
+[node name="WallfillTriple52" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 26, 0 )
+
+[node name="WallfillTriple53" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 24, 0 )
+
+[node name="WallfillTriple54" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 22, 0 )
+
+[node name="WallfillTriple55" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 20, 0 )
+
+[node name="WallfillTriple56" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.5, 18, 0 )
+
+[node name="WallfillTriple25" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 40, 0 )
+
+[node name="WallfillTriple26" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 38, 0 )
+
+[node name="WallfillTriple27" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 36, 0 )
+
+[node name="WallfillTriple28" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 34, 0 )
+
+[node name="WallfillTriple29" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 32, 0 )
+
+[node name="WallfillTriple30" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 30, 0 )
+
+[node name="WallfillTriple31" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 28, 0 )
+
+[node name="WallfillTriple32" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.5, 26, 0 )
+
+[node name="WallfillTriple57" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0 )
+
+[node name="WallfillTriple58" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18, 0 )
+
+[node name="WallfillTriple59" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16, 0 )
+
+[node name="WallfillTriple60" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14, 0 )
+
+[node name="WallfillTriple61" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0 )
+
+[node name="WallfillTriple62" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0 )
+
+[node name="WallfillTriple63" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0 )
+
+[node name="WallfillTriple64" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0 )
+
+[node name="WallfillTriple65" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -20, 0 )
+
+[node name="WallfillTriple66" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -18, 0 )
+
+[node name="WallfillTriple67" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -16, 0 )
+
+[node name="WallfillTriple68" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -14, 0 )
+
+[node name="WallfillTriple69" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -12, 0 )
+
+[node name="WallfillTriple70" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -10, 0 )
+
+[node name="WallfillTriple71" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -8, 0 )
+
+[node name="WallfillTriple72" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -6, 0 )
+
+[node name="WallfillTriple73" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -20, 0 )
+
+[node name="WallfillTriple74" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -18, 0 )
+
+[node name="WallfillTriple75" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -16, 0 )
+
+[node name="WallfillTriple76" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -14, 0 )
+
+[node name="WallfillTriple77" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -12, 0 )
+
+[node name="WallfillTriple78" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -10, 0 )
+
+[node name="WallfillTriple79" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -8, 0 )
+
+[node name="WallfillTriple80" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, -6, 0 )
+
+[node name="WallfillTriple81" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -20, 0 )
+
+[node name="WallfillTriple82" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -18, 0 )
+
+[node name="WallfillTriple83" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -16, 0 )
+
+[node name="WallfillTriple84" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -14, 0 )
+
+[node name="WallfillTriple85" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -12, 0 )
+
+[node name="WallfillTriple86" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -10, 0 )
+
+[node name="WallfillTriple87" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -8, 0 )
+
+[node name="WallfillTriple88" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -6, 0 )
+
+[node name="WallfillTriple89" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -20, 0 )
+
+[node name="WallfillTriple90" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -18, 0 )
+
+[node name="WallfillTriple91" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -16, 0 )
+
+[node name="WallfillTriple92" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -14, 0 )
+
+[node name="WallfillTriple93" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -12, 0 )
+
+[node name="WallfillTriple94" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -10, 0 )
+
+[node name="WallfillTriple95" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -8, 0 )
+
+[node name="WallfillTriple96" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, -6, 0 )
+
+[node name="WallfillTriple113" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -18, 0 )
+
+[node name="WallfillTriple114" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -16, 0 )
+
+[node name="WallfillTriple115" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -14, 0 )
+
+[node name="WallfillTriple116" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -12, 0 )
+
+[node name="WallfillTriple117" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -10, 0 )
+
+[node name="WallfillTriple118" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -8, 0 )
+
+[node name="WallfillTriple119" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -6, 0 )
+
+[node name="WallfillTriple120" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -4, 0 )
+
+[node name="WallfillTriple121" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -18, 0 )
+
+[node name="WallfillTriple122" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -16, 0 )
+
+[node name="WallfillTriple123" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -14, 0 )
+
+[node name="WallfillTriple124" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -12, 0 )
+
+[node name="WallfillTriple125" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -10, 0 )
+
+[node name="WallfillTriple126" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -8, 0 )
+
+[node name="WallfillTriple127" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -6, 0 )
+
+[node name="WallfillTriple128" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, -4, 0 )
+
+[node name="WallfillTriple97" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -20, 0 )
+
+[node name="WallfillTriple98" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -18, 0 )
+
+[node name="WallfillTriple99" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -16, 0 )
+
+[node name="WallfillTriple100" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -14, 0 )
+
+[node name="WallfillTriple101" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -12, 0 )
+
+[node name="WallfillTriple102" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -10, 0 )
+
+[node name="WallfillTriple103" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -8, 0 )
+
+[node name="WallfillTriple104" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -6, 0 )
+
+[node name="WallfillTriple105" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -20, 0 )
+
+[node name="WallfillTriple106" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -18, 0 )
+
+[node name="WallfillTriple107" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -16, 0 )
+
+[node name="WallfillTriple108" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -14, 0 )
+
+[node name="WallfillTriple109" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -12, 0 )
+
+[node name="WallfillTriple110" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -10, 0 )
+
+[node name="WallfillTriple111" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -8, 0 )
+
+[node name="WallfillTriple112" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -6, 0 )
+
+[node name="WallfillCornerLeft" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -4, 0 )
+
+[node name="WallfillCornerLeft17" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 22, 0 )
+
+[node name="WallfillCornerLeft2" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -6, 0 )
+
+[node name="WallfillCornerLeft3" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -8, 0 )
+
+[node name="WallfillCornerLeft4" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -10, 0 )
+
+[node name="WallfillCornerLeft5" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -12, 0 )
+
+[node name="WallfillCornerLeft6" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -14, 0 )
+
+[node name="WallfillCornerLeft7" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -16, 0 )
+
+[node name="WallfillCornerLeft8" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.25, -18, 0 )
+
+[node name="WallfillCornerLeft9" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, 4, 0 )
+
+[node name="WallfillCornerLeft10" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, 2, 0 )
+
+[node name="WallfillCornerLeft11" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, 0, 0 )
+
+[node name="WallfillCornerLeft12" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, -2, 0 )
+
+[node name="WallfillCornerLeft13" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, -4, 0 )
+
+[node name="WallfillCornerLeft14" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, -6, 0 )
+
+[node name="WallfillCornerLeft15" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, -8, 0 )
+
+[node name="WallfillCornerLeft16" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.25, -10, 0 )
+
+[node name="WallfillCornerRight" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -4, 0 )
+
+[node name="WallfillCornerRight2" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -6, 0 )
+
+[node name="WallfillCornerRight3" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -8, 0 )
+
+[node name="WallfillCornerRight4" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -10, 0 )
+
+[node name="WallfillCornerRight5" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -12, 0 )
+
+[node name="WallfillCornerRight6" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -14, 0 )
+
+[node name="WallfillCornerRight7" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -16, 0 )
+
+[node name="WallfillCornerRight8" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.75, -18, 0 )
+
+[node name="WallfillCornerRight10" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 24, 0 )
+
+[node name="WallfillCornerRight11" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 26, 0 )
+
+[node name="WallfillCornerRight12" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 28, 0 )
+
+[node name="WallfillCornerRight13" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 30, 0 )
+
+[node name="WallfillCornerRight14" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 32, 0 )
+
+[node name="WallfillCornerRight15" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 34, 0 )
+
+[node name="WallfillCornerRight16" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -23.25, 36, 0 )
+
+[node name="WallfillTriple129" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 40, 0 )
+
+[node name="WallfillTriple130" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 38, 0 )
+
+[node name="WallfillTriple131" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 36, 0 )
+
+[node name="WallfillTriple132" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 34, 0 )
+
+[node name="WallfillTriple133" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 32, 0 )
+
+[node name="WallfillTriple134" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 30, 0 )
+
+[node name="WallfillTriple135" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 28, 0 )
+
+[node name="WallfillTriple136" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -37.5, 26, 0 )
+
+[node name="WallfillTriple137" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 40, 0 )
+
+[node name="WallfillTriple138" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 38, 0 )
+
+[node name="WallfillTriple139" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 36, 0 )
+
+[node name="WallfillTriple140" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 34, 0 )
+
+[node name="WallfillTriple141" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 32, 0 )
+
+[node name="WallfillTriple142" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 30, 0 )
+
+[node name="WallfillTriple143" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 28, 0 )
+
+[node name="WallfillTriple144" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -46.5, 26, 0 )
+
+[node name="WallfillTriple145" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 40, 0 )
+
+[node name="WallfillTriple146" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 38, 0 )
+
+[node name="WallfillTriple147" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 36, 0 )
+
+[node name="WallfillTriple148" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 34, 0 )
+
+[node name="WallfillTriple149" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 32, 0 )
+
+[node name="WallfillTriple150" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 30, 0 )
+
+[node name="WallfillTriple151" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 28, 0 )
+
+[node name="WallfillTriple152" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -55.5, 26, 0 )
+
+[node name="WallfillTriple153" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -18, 0 )
+
+[node name="WallfillTriple154" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -16, 0 )
+
+[node name="WallfillTriple155" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -14, 0 )
+
+[node name="WallfillTriple156" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -12, 0 )
+
+[node name="WallfillTriple157" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -10, 0 )
+
+[node name="WallfillTriple158" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -8, 0 )
+
+[node name="WallfillTriple159" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -6, 0 )
+
+[node name="WallfillTriple160" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5, -4, 0 )
+
+[node name="WallfillTriple161" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -18, 0 )
+
+[node name="WallfillTriple162" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -16, 0 )
+
+[node name="WallfillTriple163" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -14, 0 )
+
+[node name="WallfillTriple164" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -12, 0 )
+
+[node name="WallfillTriple165" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -10, 0 )
+
+[node name="WallfillTriple166" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -8, 0 )
+
+[node name="WallfillTriple167" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -6, 0 )
+
+[node name="WallfillTriple168" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, -4, 0 )
+
+[node name="WallfillTriple169" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -20, 0 )
+
+[node name="WallfillTriple170" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -18, 0 )
+
+[node name="WallfillTriple171" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -16, 0 )
+
+[node name="WallfillTriple172" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -14, 0 )
+
+[node name="WallfillTriple173" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -12, 0 )
+
+[node name="WallfillTriple174" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -10, 0 )
+
+[node name="WallfillTriple175" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -8, 0 )
+
+[node name="WallfillTriple176" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, -6, 0 )
+
+[node name="WallfillTriple177" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -20, 0 )
+
+[node name="WallfillTriple178" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -18, 0 )
+
+[node name="WallfillTriple179" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -16, 0 )
+
+[node name="WallfillTriple180" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -14, 0 )
+
+[node name="WallfillTriple181" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -12, 0 )
+
+[node name="WallfillTriple182" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -10, 0 )
+
+[node name="WallfillTriple183" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -8, 0 )
+
+[node name="WallfillTriple184" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -84, -6, 0 )
+
+[node name="WallfillTriple185" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 40, 0 )
+
+[node name="WallfillTriple186" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 38, 0 )
+
+[node name="WallfillTriple187" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 36, 0 )
+
+[node name="WallfillTriple188" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 34, 0 )
+
+[node name="WallfillTriple189" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 32, 0 )
+
+[node name="WallfillTriple190" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 30, 0 )
+
+[node name="WallfillTriple191" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 28, 0 )
+
+[node name="WallfillTriple192" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -64.5, 26, 0 )
+
+[node name="WallfillTriple193" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 40, 0 )
+
+[node name="WallfillTriple194" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 38, 0 )
+
+[node name="WallfillTriple195" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 36, 0 )
+
+[node name="WallfillTriple196" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 34, 0 )
+
+[node name="WallfillTriple197" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 32, 0 )
+
+[node name="WallfillTriple198" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 30, 0 )
+
+[node name="WallfillTriple199" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 28, 0 )
+
+[node name="WallfillTriple200" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -73.5, 26, 0 )
+
+[node name="WallfillTriple201" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -20, 0 )
+
+[node name="WallfillTriple202" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -18, 0 )
+
+[node name="WallfillTriple203" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -16, 0 )
+
+[node name="WallfillTriple204" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -14, 0 )
+
+[node name="WallfillTriple205" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -12, 0 )
+
+[node name="WallfillTriple206" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -10, 0 )
+
+[node name="WallfillTriple207" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -8, 0 )
+
+[node name="WallfillTriple208" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93, -6, 0 )
+
+[node name="WallfillTriple209" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -20, 0 )
+
+[node name="WallfillTriple210" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -18, 0 )
+
+[node name="WallfillTriple211" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -16, 0 )
+
+[node name="WallfillTriple212" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -14, 0 )
+
+[node name="WallfillTriple213" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -12, 0 )
+
+[node name="WallfillTriple214" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -10, 0 )
+
+[node name="WallfillTriple215" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -8, 0 )
+
+[node name="WallfillTriple216" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102, -6, 0 )
+
+[node name="WallfillTriple217" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 40, 0 )
+
+[node name="WallfillTriple218" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 38, 0 )
+
+[node name="WallfillTriple219" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 36, 0 )
+
+[node name="WallfillTriple220" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 34, 0 )
+
+[node name="WallfillTriple221" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 32, 0 )
+
+[node name="WallfillTriple222" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 30, 0 )
+
+[node name="WallfillTriple223" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 28, 0 )
+
+[node name="WallfillTriple224" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -82.5, 26, 0 )
+
+[node name="WallfillTriple225" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 40, 0 )
+
+[node name="WallfillTriple226" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 38, 0 )
+
+[node name="WallfillTriple227" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 36, 0 )
+
+[node name="WallfillTriple228" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 34, 0 )
+
+[node name="WallfillTriple229" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 32, 0 )
+
+[node name="WallfillTriple230" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 30, 0 )
+
+[node name="WallfillTriple231" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 28, 0 )
+
+[node name="WallfillTriple232" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -91.5, 26, 0 )
+
+[node name="WallfillTriple233" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 40, 0 )
+
+[node name="WallfillTriple234" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 38, 0 )
+
+[node name="WallfillTriple235" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 36, 0 )
+
+[node name="WallfillTriple236" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 34, 0 )
+
+[node name="WallfillTriple237" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 32, 0 )
+
+[node name="WallfillTriple238" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 30, 0 )
+
+[node name="WallfillTriple239" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 28, 0 )
+
+[node name="WallfillTriple240" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -100.5, 26, 0 )
+
+[node name="WallfillCornerRight25" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, 4, 0 )
+
+[node name="WallfillCornerRight26" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, 2, 0 )
+
+[node name="WallfillCornerRight27" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, 2.38419e-07, 0 )
+
+[node name="WallfillCornerRight28" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, -2, 0 )
+
+[node name="WallfillCornerRight29" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, -4, 0 )
+
+[node name="WallfillCornerRight30" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, -6, 0 )
+
+[node name="WallfillCornerRight31" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, -8, 0 )
+
+[node name="WallfillCornerRight32" parent="Objects/WallfillContainer" instance=ExtResource( 10 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -144.75, -10, 0 )
+
+[node name="WallfillTriple241" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, -10, 0 )
+
+[node name="WallfillTriple242" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, -8, 0 )
+
+[node name="WallfillTriple243" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, -6, 0 )
+
+[node name="WallfillTriple244" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, -4, 0 )
+
+[node name="WallfillTriple245" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, -2, 0 )
+
+[node name="WallfillTriple246" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, 3.57628e-06, 0 )
+
+[node name="WallfillTriple247" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, 2, 0 )
+
+[node name="WallfillTriple248" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -112.5, 4, 0 )
+
+[node name="WallfillTriple249" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, -10, 0 )
+
+[node name="WallfillTriple250" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, -8, 0 )
+
+[node name="WallfillTriple251" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, -6, 0 )
+
+[node name="WallfillTriple252" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, -4, 0 )
+
+[node name="WallfillTriple253" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, -2, 0 )
+
+[node name="WallfillTriple254" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, 3.57628e-06, 0 )
+
+[node name="WallfillTriple255" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, 2, 0 )
+
+[node name="WallfillTriple256" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -121.5, 4, 0 )
+
+[node name="WallfillTriple257" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 40, 0 )
+
+[node name="WallfillTriple258" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 38, 0 )
+
+[node name="WallfillTriple259" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 36, 0 )
+
+[node name="WallfillTriple260" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 34, 0 )
+
+[node name="WallfillTriple261" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 32, 0 )
+
+[node name="WallfillTriple262" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 30, 0 )
+
+[node name="WallfillTriple263" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 28, 0 )
+
+[node name="WallfillTriple264" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -109.75, 26, 0 )
+
+[node name="WallfillTriple265" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 40, 0 )
+
+[node name="WallfillTriple266" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 38, 0 )
+
+[node name="WallfillTriple267" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 36, 0 )
+
+[node name="WallfillTriple268" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 34, 0 )
+
+[node name="WallfillTriple269" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 32, 0 )
+
+[node name="WallfillTriple270" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 30, 0 )
+
+[node name="WallfillTriple271" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 28, 0 )
+
+[node name="WallfillTriple272" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -118.75, 26, 0 )
+
+[node name="WallfillTriple273" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 40, 0 )
+
+[node name="WallfillTriple274" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 38, 0 )
+
+[node name="WallfillTriple275" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 36, 0 )
+
+[node name="WallfillTriple276" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 34, 0 )
+
+[node name="WallfillTriple277" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 32, 0 )
+
+[node name="WallfillTriple278" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 30, 0 )
+
+[node name="WallfillTriple279" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 28, 0 )
+
+[node name="WallfillTriple280" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -127.75, 26, 0 )
+
+[node name="WallfillTriple281" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, -10, 0 )
+
+[node name="WallfillTriple282" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, -8, 0 )
+
+[node name="WallfillTriple283" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, -6, 0 )
+
+[node name="WallfillTriple284" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, -4, 0 )
+
+[node name="WallfillTriple285" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, -2, 0 )
+
+[node name="WallfillTriple286" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, 3.57628e-06, 0 )
+
+[node name="WallfillTriple287" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, 2, 0 )
+
+[node name="WallfillTriple288" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -130.5, 4, 0 )
+
+[node name="WallfillTriple289" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 40, 0 )
+
+[node name="WallfillTriple290" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 38, 0 )
+
+[node name="WallfillTriple291" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 36, 0 )
+
+[node name="WallfillTriple292" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 34, 0 )
+
+[node name="WallfillTriple293" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 32, 0 )
+
+[node name="WallfillTriple294" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 30, 0 )
+
+[node name="WallfillTriple295" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 28, 0 )
+
+[node name="WallfillTriple296" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -136.75, 26, 0 )
+
+[node name="WallfillTriple297" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 40, 0 )
+
+[node name="WallfillTriple298" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 38, 0 )
+
+[node name="WallfillTriple299" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 36, 0 )
+
+[node name="WallfillTriple300" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 34, 0 )
+
+[node name="WallfillTriple301" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 32, 0 )
+
+[node name="WallfillTriple302" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 30, 0 )
+
+[node name="WallfillTriple303" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 28, 0 )
+
+[node name="WallfillTriple304" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -145.75, 26, 0 )
+
+[node name="WallfillTriple305" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, -10, 0 )
+
+[node name="WallfillTriple306" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, -8, 0 )
+
+[node name="WallfillTriple307" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, -6, 0 )
+
+[node name="WallfillTriple308" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, -4, 0 )
+
+[node name="WallfillTriple309" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, -2, 0 )
+
+[node name="WallfillTriple310" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, 3.57628e-06, 0 )
+
+[node name="WallfillTriple311" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, 2, 0 )
+
+[node name="WallfillTriple312" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -139.5, 4, 0 )
+
+[node name="WallfillCornerLeft18" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 18, 0 )
+
+[node name="WallfillCornerLeft19" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 20, 0 )
+
+[node name="WallfillCornerLeft20" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 22, 0 )
+
+[node name="WallfillCornerLeft21" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 24, 0 )
+
+[node name="WallfillCornerLeft22" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 26, 0 )
+
+[node name="WallfillCornerLeft23" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 28, 0 )
+
+[node name="WallfillCornerLeft24" parent="Objects/WallfillContainer" instance=ExtResource( 11 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 5.25, 30, 0 )
+
+[node name="WallfillTriple313" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -20, 0 )
+
+[node name="WallfillTriple314" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -18, 0 )
+
+[node name="WallfillTriple315" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -16, 0 )
+
+[node name="WallfillTriple316" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -14, 0 )
+
+[node name="WallfillTriple317" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -12, 0 )
+
+[node name="WallfillTriple318" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -10, 0 )
+
+[node name="WallfillTriple319" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -8, 0 )
+
+[node name="WallfillTriple320" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -6, 0 )
+
+[node name="WallfillTriple321" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -20, 0 )
+
+[node name="WallfillTriple322" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -18, 0 )
+
+[node name="WallfillTriple323" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -16, 0 )
+
+[node name="WallfillTriple324" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -14, 0 )
+
+[node name="WallfillTriple325" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -12, 0 )
+
+[node name="WallfillTriple326" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -10, 0 )
+
+[node name="WallfillTriple327" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -8, 0 )
+
+[node name="WallfillTriple328" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -6, 0 )
+
+[node name="WallfillTriple329" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -20, 0 )
+
+[node name="WallfillTriple330" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -18, 0 )
+
+[node name="WallfillTriple331" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -16, 0 )
+
+[node name="WallfillTriple332" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -14, 0 )
+
+[node name="WallfillTriple333" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -12, 0 )
+
+[node name="WallfillTriple334" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -10, 0 )
+
+[node name="WallfillTriple335" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -8, 0 )
+
+[node name="WallfillTriple336" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -6, 0 )
+
+[node name="WallfillTriple337" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 32, 0 )
+
+[node name="WallfillTriple338" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 30, 0 )
+
+[node name="WallfillTriple339" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 28, 0 )
+
+[node name="WallfillTriple340" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 26, 0 )
+
+[node name="WallfillTriple341" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 24, 0 )
+
+[node name="WallfillTriple342" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 22, 0 )
+
+[node name="WallfillTriple343" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 20, 0 )
+
+[node name="WallfillTriple344" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 55.5, 18, 0 )
+
+[node name="WallfillTriple345" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 32, 0 )
+
+[node name="WallfillTriple346" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 30, 0 )
+
+[node name="WallfillTriple347" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 28, 0 )
+
+[node name="WallfillTriple348" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 26, 0 )
+
+[node name="WallfillTriple349" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 24, 0 )
+
+[node name="WallfillTriple350" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 22, 0 )
+
+[node name="WallfillTriple351" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 20, 0 )
+
+[node name="WallfillTriple352" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 46.5, 18, 0 )
+
+[node name="WallfillTriple353" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 32, 0 )
+
+[node name="WallfillTriple354" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 30, 0 )
+
+[node name="WallfillTriple355" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 28, 0 )
+
+[node name="WallfillTriple356" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 26, 0 )
+
+[node name="WallfillTriple357" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 24, 0 )
+
+[node name="WallfillTriple358" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 22, 0 )
+
+[node name="WallfillTriple359" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 20, 0 )
+
+[node name="WallfillTriple360" parent="Objects/WallfillContainer" instance=ExtResource( 13 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 37.5, 18, 0 )
+
+[node name="CamStopContainer" type="Spatial" parent="."]
+
+[node name="CamStopWall" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, -2, 0 )
+
+[node name="CamStopWall9" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 8, 0 )
+
+[node name="CamStopWall10" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 10, 0 )
+
+[node name="CamStopWall11" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 12, 0 )
+
+[node name="CamStopWall12" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 14, 0 )
+
+[node name="CamStopWall13" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 16, 0 )
+
+[node name="CamStopWall14" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 18, 0 )
+
+[node name="CamStopWall15" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 20, 0 )
+
+[node name="CamStopWall2" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 0, 0 )
+
+[node name="CamStopWall3" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 2, 0 )
+
+[node name="CamStopWall4" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 4, 0 )
+
+[node name="CamStopWall5" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 6, 0 )
+
+[node name="CamStopWall6" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 8, 0 )
+
+[node name="CamStopWall7" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 10, 0 )
+
+[node name="CamStopWall8" parent="CamStopContainer" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 12, 0 )
+
+[node name="LevelGoal" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.75, 8.25, 0 )
+
+[node name="BackgroundContainer" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, -2.75, -22.75 )
+
+[node name="BG" parent="BackgroundContainer" instance=ExtResource( 8 )]
+transform = Transform( -55, 0, -1.05697e-06, 0, 55, 0, 8.30477e-06, 0, -7, 230.5, 330.25, 1434.75 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.961516, -0.0669877, -0.266457, -0.12941, 0.965926, 0.224144, 0.242363, 0.25, -0.937422, -206.2, 2.75, -152.75 )
+light_color = Color( 1, 0.886275, 0.886275, 1 )
+light_energy = 2.173
+shadow_enabled = true
+shadow_color = Color( 0.34902, 0.360784, 0.568627, 1 )
+directional_shadow_max_distance = 140.0

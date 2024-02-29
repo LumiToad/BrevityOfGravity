@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SafetyTreeEnvironment.ogg-93e8f2bc25db3c885a16f1e42fe2c182.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/EnvironmentalSounds/SafetyTreeEnvironment.ogg"
+dest_files=[ "res://.import/SafetyTreeEnvironment.ogg-93e8f2bc25db3c885a16f1e42fe2c182.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

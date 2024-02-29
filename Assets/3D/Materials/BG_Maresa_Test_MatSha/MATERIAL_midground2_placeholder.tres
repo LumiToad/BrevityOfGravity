@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/VISUALSHADERMATERIAL_midground2_placeholder.tres" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )

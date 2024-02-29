@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/GameCode/GravityBullet.gd" type="Script" id=1]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_GunTrail_01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_gravityGunBulletSplash_01.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.3
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.152941, 0.270588, 0.792157, 1 )
+emission_enabled = true
+emission = Color( 0.027451, 0.392157, 0.494118, 1 )
+emission_energy = 4.29
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.5
+
+[node name="GravityBullet" type="KinematicBody"]
+pause_mode = 1
+collision_layer = 0
+collision_mask = 0
+axis_lock_motion_z = true
+move_lock_z = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.694435, 0, 0, 0, 0.32742, 0, 0, 0, 0.411667, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.188051, 0, 0, 0, 0.188051, 0, 0, 0, 0.188051, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="OmniLight" type="OmniLight" parent="MeshInstance"]
+transform = Transform( 5.31771, 0, 0, 0, 5.31771, 0, 0, 0, 5.31771, 0, 0, 0 )
+light_color = Color( 0, 1, 0.929412, 1 )
+shadow_enabled = true
+omni_range = 9.0
+omni_attenuation = 2.0
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 16
+collision_mask = 18
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 0.460186, 0, 0, 0, 0.639723, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="VFX_GunTrail" parent="." instance=ExtResource( 2 )]
+
+[node name="VFX_gravityGunBulletSplash" parent="." instance=ExtResource( 3 )]
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 324.536, 0, 0, 0, 243.374, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="DeleteTimer" type="Timer" parent="."]
+wait_time = 0.7
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
+[connection signal="timeout" from="DeleteTimer" to="." method="_on_DeleteTimer_timeout"]

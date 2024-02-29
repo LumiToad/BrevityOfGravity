@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Bush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BuildingBlockLarge1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BuildingBlockMedium.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Temple/BrokenPillarStanding.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantGroundLarge1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone3.tscn" type="PackedScene" id=7]
+
+[node name="PillarSet" type="Spatial"]
+
+[node name="PlantGroundLarge4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.353, 0.0214005, 1.4868 )
+
+[node name="Stone3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.353, 0.0214005, -1.3132 )
+
+[node name="Stone4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65302, 0.0214005, -1.3132 )
+
+[node name="BuildingBlockMedium45" parent="." instance=ExtResource( 4 )]
+transform = Transform( 3.14722e-08, 6.4373e-08, 0.72, -6.29444e-08, 0.72, -6.4373e-08, -0.72, -6.29444e-08, 3.14722e-08, -2.79999, -0.9, -2.75001 )
+
+[node name="BuildingBlockMedium49" parent="." instance=ExtResource( 4 )]
+transform = Transform( 3.14722e-08, 6.4373e-08, 0.72, -6.29444e-08, 0.72, -6.4373e-08, -0.72, -6.29444e-08, 3.14722e-08, 2.20001, -0.9, -2.75001 )
+
+[node name="BuildingBlockMedium54" parent="." instance=ExtResource( 4 )]
+transform = Transform( 3.14722e-08, 6.4373e-08, 0.72, -6.29444e-08, 0.72, -6.4373e-08, -0.72, -6.29444e-08, 3.14722e-08, 2, 0.3, 2.85 )
+
+[node name="BuildingBlockLarge72" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.50052e-08, 9.20535e-08, 1.0296, -9.00105e-08, 1.0296, -9.20535e-08, -1.0296, -9.00105e-08, 4.50053e-08, -0.299988, -1.9, -1.55001 )
+
+[node name="BuildingBlockLarge73" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.50052e-08, 9.20535e-08, 1.0296, -9.00105e-08, 1.0296, -9.20535e-08, -1.0296, -9.00105e-08, 4.50053e-08, -0.299988, 14.45, -1.55001 )
+
+[node name="Bush77" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.41991, 0, -0.380464, 0, 1.47, 0, 0.380464, 0, 1.41991, -2.5, -0.9, 2.05 )
+
+[node name="Bush78" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.41991, 0, -0.380464, 0, 1.47, 0, 0.380464, 0, 1.41991, 3.29999, 14.25, 2.05 )
+
+[node name="BrokenPillarStanding3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210999, 1.0501, -1.85 )
+
+[node name="BrokenPillarStanding4" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.510986, 14.4501, -1.85 )

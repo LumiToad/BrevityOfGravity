@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/MESH_MushroomSmall_01.obj-f7cb1dc0bac4f25d6b8ebc5bf13f873f.mesh"
+
+[deps]
+
+files=[ "res://.import/MESH_MushroomSmall_01.obj-f7cb1dc0bac4f25d6b8ebc5bf13f873f.mesh" ]
+
+source_file="res://Assets/3D/Meshes/EnvironmentDecoration/MESH_MushroomSmall_01.obj"
+dest_files=[ "res://.import/MESH_MushroomSmall_01.obj-f7cb1dc0bac4f25d6b8ebc5bf13f873f.mesh", "res://.import/MESH_MushroomSmall_01.obj-f7cb1dc0bac4f25d6b8ebc5bf13f873f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

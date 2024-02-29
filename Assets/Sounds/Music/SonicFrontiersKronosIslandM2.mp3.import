@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SonicFrontiersKronosIslandM2.mp3-678e501bd42798e402134edb0427ca65.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/SonicFrontiersKronosIslandM2.mp3"
+dest_files=[ "res://.import/SonicFrontiersKronosIslandM2.mp3-678e501bd42798e402134edb0427ca65.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

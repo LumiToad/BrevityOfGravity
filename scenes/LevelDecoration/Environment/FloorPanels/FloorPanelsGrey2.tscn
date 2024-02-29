@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelGreySquare2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelGreyBroken2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelGreySquareSmall2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelGreySquare.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelGreyBroken1.tscn" type="PackedScene" id=5]
+
+[node name="FloorPanelsGrey2" type="Spatial"]
+
+[node name="FloorPanelSquareHalf2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 3.6, 1.7 )
+
+[node name="FloorPanelGreySquare3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 3.6, 3.35 )
+
+[node name="FloorPanelGreySquare4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 3.5, 1.7 )
+
+[node name="FloorPanelSquare2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.9, 3.5, 5.5 )
+
+[node name="FloorPanelGreySquareSmall4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 3.6, 3.3 )

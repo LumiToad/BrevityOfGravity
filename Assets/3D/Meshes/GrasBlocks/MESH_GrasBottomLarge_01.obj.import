@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/MESH_GrasBottomLarge_01.obj-77c584f0528c485a05d0b54fc5d56668.mesh"
+
+[deps]
+
+files=[ "res://.import/MESH_GrasBottomLarge_01.obj-77c584f0528c485a05d0b54fc5d56668.mesh" ]
+
+source_file="res://Assets/3D/Meshes/GrasBlocks/MESH_GrasBottomLarge_01.obj"
+dest_files=[ "res://.import/MESH_GrasBottomLarge_01.obj-77c584f0528c485a05d0b54fc5d56668.mesh", "res://.import/MESH_GrasBottomLarge_01.obj-77c584f0528c485a05d0b54fc5d56668.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

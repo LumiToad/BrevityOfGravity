@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/MATERIAL_midground1_placeholder.tres" type="Material" id=2]
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/MATERIAL_Background_Placeholder.tres" type="Material" id=3]
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/MATERIAL_midground2_placeholder.tres" type="Material" id=4]
+
+[sub_resource type="PlaneMesh" id=19]
+
+[sub_resource type="PlaneMesh" id=7]
+
+[sub_resource type="PlaneMesh" id=6]
+material = ExtResource( 3 )
+
+[node name="BG_Maresa_Test" type="Spatial"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 13, 0 )
+
+[node name="MCloser Midground" type="MeshInstance" parent="."]
+transform = Transform( 19, 7.83183e-10, -8.93507e-16, 0, -4.37114e-08, -26.1, -1.48805e-08, 1, -1.14087e-06, 0, 0, 0 )
+mesh = SubResource( 19 )
+material/0 = ExtResource( 2 )
+
+[node name="MFar Midground" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, -4.37114e-08, -28.938, 0, 1, -1.26492e-06, 1.5299e-06, 0, -6.156 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 4 )
+
+[node name="MBackground" type="MeshInstance" parent="."]
+transform = Transform( 19, -5.95816e-15, 7.88629e-21, 0, -4.34491e-08, -30.099, 1.13888e-13, 0.994, -1.31567e-06, 0, -0.75219, -8.814 )
+mesh = SubResource( 6 )
+
+[node name="MBackground2" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, 0, -22.791, 0, 1, 0, 0, 15.796, -9.273 )
+mesh = SubResource( 6 )
+
+[node name="MCloser Midground3" type="MeshInstance" parent="."]
+transform = Transform( 19, 7.83182e-10, -8.93505e-16, 0, -4.37114e-08, -26.1, -1.48805e-08, 1, -1.14087e-06, -38, 0, -3.32207e-06 )
+mesh = SubResource( 19 )
+material/0 = ExtResource( 2 )
+
+[node name="MFar Midground3" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, -4.37114e-08, -28.938, 0, 1, -1.26492e-06, -38, 0, -6.156 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 4 )
+
+[node name="MBackground5" type="MeshInstance" parent="."]
+transform = Transform( 19, -7.10543e-15, 1.35525e-20, 0, -4.34491e-08, -30.099, 1.13687e-13, 0.994, -1.31567e-06, -38, -0.75219, -8.814 )
+mesh = SubResource( 6 )
+
+[node name="MBackground6" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, 0, -22.791, 0, 1, 0, -38, 15.796, -9.273 )
+mesh = SubResource( 6 )
+
+[node name="MCloser Midground2" type="MeshInstance" parent="."]
+transform = Transform( 19, 7.83182e-10, -8.93505e-16, 0, -4.37114e-08, -26.1, -1.48805e-08, 1, -1.14087e-06, 38, 0, 3.32207e-06 )
+mesh = SubResource( 19 )
+material/0 = ExtResource( 2 )
+
+[node name="MFar Midground2" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, -4.37114e-08, -28.938, 0, 1, -1.26492e-06, 38, 0, -6.156 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 4 )
+
+[node name="MBackground3" type="MeshInstance" parent="."]
+transform = Transform( 19, -7.10543e-15, 1.35525e-20, 0, -4.34491e-08, -30.099, 1.13687e-13, 0.994, -1.31567e-06, 38, -0.75219, -8.814 )
+mesh = SubResource( 6 )
+
+[node name="MBackground4" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, 0, -22.791, 0, 1, 0, 38, 15.796, -9.273 )
+mesh = SubResource( 6 )

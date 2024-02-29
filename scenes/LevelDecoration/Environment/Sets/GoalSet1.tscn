@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone4.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LevelDecoration/Environment/FloorPanels/FloorPanelBrokenLarge.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/WeirdPlant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Stones/Stone3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/BushShade2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Plant8Blue.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/MushroomBig.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/MushroomSmall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Bush.tscn" type="PackedScene" id=10]
+
+[node name="GoalSet1" type="Spatial"]
+
+[node name="Bush32" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1.008, 0, 0, 0, 1.008, 0, 0, 0, 0.96, 3.15001, -1.4, 4.8 )
+
+[node name="Plant8Blue17" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49999, 0.0999989, 5.2 )
+
+[node name="Plant8Blue18" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, -3.59999, -1.13249e-06, 3.8 )
+
+[node name="Bush3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -3.2, -1.1, 7.9 )
+
+[node name="Stone4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99999, -1.13249e-06, 3.8 )
+
+[node name="Stone4" parent="Stone4" instance=ExtResource( 2 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.29999, 0.1, 0.2 )
+
+[node name="FloorPanelBrokenLarge" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70002, -0.100002, 9.3 )
+
+[node name="WeirdPlant" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90001, -1.13249e-06, 9.4 )
+
+[node name="WeirdPlant2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.25, 0, 0.433013, 0, 0.5, 0, -0.433013, 0, 0.25, 3.90001, -1.13249e-06, 10.8 )
+
+[node name="MushroomBig6" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.676148, 0, -0.181173, 0, 0.7, 0, 0.181173, 0, -0.676148, -9.82999, -7.15256e-07, 10.4404 )
+
+[node name="MushroomSmall10" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.676148, 0, -0.181173, 0, 0.7, 0, 0.181173, 0, -0.676148, -10.07, -7.15256e-07, 10.3596 )

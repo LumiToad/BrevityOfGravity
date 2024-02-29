@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/3D/Meshes/EnvironmentDecoration/Temple/MESH_BuildingBlockMedium_01.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_FrontBasePaint.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+
+[node name="BuildingBlockMedium" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

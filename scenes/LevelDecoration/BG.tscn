@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/2D/BG/BG_Light_01.png" type="Texture" id=1]
+[ext_resource path="res://scenes/BG_Maresa_Test_MatSha/BG_Far_01.tres" type="Material" id=2]
+[ext_resource path="res://scenes/BG_Maresa_Test_MatSha/BG_mid_01.tres" type="Shader" id=3]
+[ext_resource path="res://scenes/BG_Maresa_Test_MatSha/BG_Sky_01.tres" type="Shader" id=4]
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/MATERIAL_Background_Placeholder.tres" type="Material" id=5]
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/MATERIAL_midground2_placeholder.tres" type="Material" id=6]
+[ext_resource path="res://Assets/3D/Materials/BG_Maresa_Test_MatSha/MATERIAL_midground1_placeholder.tres" type="Material" id=7]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+
+[sub_resource type="VisualShaderNodeTexture" id=4]
+texture = ExtResource( 1 )
+texture_type = 1
+
+[sub_resource type="VisualShader" id=5]
+code = "shader_type spatial;
+render_mode blend_add, specular_schlick_ggx, async_visible, unshaded;
+
+uniform sampler2D tex_frg_2 : hint_albedo;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ALPHA = n_out2p1;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 121.742, 239.989 )
+modes/blend = 1
+flags/unshaded = true
+nodes/fragment/0/position = Vector2( 540, 140 )
+nodes/fragment/2/node = SubResource( 4 )
+nodes/fragment/2/position = Vector2( 220, 180 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 1, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+
+[sub_resource type="PlaneMesh" id=7]
+
+[sub_resource type="PlaneMesh" id=8]
+
+[sub_resource type="PlaneMesh" id=9]
+material = ExtResource( 5 )
+
+[node name="BG" type="Spatial"]
+
+[node name="BG Sky" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 13, -2.5, -64.25 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="BG Far" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -2.75382e-08, -11.97, 0, 1, -8.30516e-07, 13, -12, -20 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="BG mid" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -2.45365e-08, -10.6653, 0, 1, -8.30516e-07, 13, -14, 15 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="BG Light" type="MeshInstance" parent="."]
+transform = Transform( 29.07, 0, 0, 0, -4.9073e-08, -21.3305, 0, 1, -8.30516e-07, 14, 1, 17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="BG Sky3" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, -51.4844, -2.5, -64.25 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="BG Far3" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -2.75382e-08, -11.97, 0, 1, -8.30516e-07, -51.4844, -12, -20 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="BG mid3" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -2.45365e-08, -10.6653, 0, 1, -8.30516e-07, -51.4844, -14, 15 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="BG Light3" type="MeshInstance" parent="."]
+transform = Transform( 29.07, 0, 0, 0, -4.9073e-08, -21.3305, 0, 1, -8.30516e-07, -50.4844, 1, 17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="BG Sky2" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 77.6565, -2.5, -64.25 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="BG Far2" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -2.75382e-08, -11.97, 0, 1, -8.30516e-07, 77.6565, -12, -20 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="BG mid2" type="MeshInstance" parent="."]
+transform = Transform( 32.3, 0, 0, 0, -2.45365e-08, -10.6653, 0, 1, -8.30516e-07, 77.6565, -14, 15 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="BG Light2" type="MeshInstance" parent="."]
+transform = Transform( 29.07, 0, 0, 0, -4.9073e-08, -21.3305, 0, 1, -8.30516e-07, 78.6565, 1, 17 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+
+[node name="MCloser Midground" type="MeshInstance" parent="."]
+transform = Transform( 19, 7.83183e-10, -8.93507e-16, 0, -4.37114e-08, -26.1, -1.48805e-08, 1, -1.14087e-06, 0, 0, 9 )
+visible = false
+mesh = SubResource( 7 )
+material/0 = ExtResource( 7 )
+
+[node name="MFar Midground" type="MeshInstance" parent="."]
+transform = Transform( 19, 0, 0, 0, -4.37114e-08, -28.938, 0, 1, -1.26492e-06, 1.5299e-06, 0, 2.844 )
+visible = false
+mesh = SubResource( 8 )
+material/0 = ExtResource( 6 )
+
+[node name="MBackground" type="MeshInstance" parent="."]
+transform = Transform( 19, -5.95816e-15, 7.88629e-21, 0, -4.34491e-08, -30.099, 1.13888e-13, 0.994, -1.31567e-06, 0, -0.75219, 0.186 )
+visible = false
+mesh = SubResource( 9 )

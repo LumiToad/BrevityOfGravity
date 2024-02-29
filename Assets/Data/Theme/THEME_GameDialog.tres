@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Data/Stylebox/STYLEBOX_GameDialog.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Data/DynFontData/DYNFONT_Garret.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Data/Stylebox/STYLEBOX_ButtonFlat.tres" type="StyleBox" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/fonts/Garet-Book.woff2"
+
+[sub_resource type="DynamicFont" id=2]
+size = 88
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Assets/fonts/Garet-Book.woff2"
+
+[sub_resource type="DynamicFont" id=4]
+size = 69
+font_data = SubResource( 3 )
+
+[resource]
+default_font = ExtResource( 2 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.623529, 0.623529, 0.623529, 1 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 0
+Button/fonts/font = ExtResource( 2 )
+Button/fonts/hover = SubResource( 2 )
+Button/styles/disabled = ExtResource( 3 )
+Button/styles/focus = ExtResource( 3 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 3 )
+Button/styles/pressed = ExtResource( 3 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = SubResource( 4 )
+Label/styles/normal = ExtResource( 1 )

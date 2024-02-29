@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/3D/Textures/TEXTURE_FloorTop_03.png" type="Texture" id=1]
+[ext_resource path="res://Assets/3D/Textures/TEXTURE_FloorBottom_03.png" type="Texture" id=2]
+[ext_resource path="res://Assets/3D/Meshes/MESH_FloorCornerRight_03.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/3D/Meshes/GrasBlocks/MESH_GrasCornerRight_02.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_GrasTop_02.png" type="Texture" id=5]
+[ext_resource path="res://Assets/3D/Meshes/GrasBlocks/MESH_GrasBottomCorner_01.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_GrasBottomCorner_02.png" type="Texture" id=7]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.75, 1, 2 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 7 )
+
+[node name="FloorCornerRight" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 17
+collision_mask = 23
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 3 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 2.5, 0, 0, 7 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 6 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.2, 0, 0, 0, 2.5, 0, -9.6, 7 )
+visible = false
+mesh = ExtResource( 6 )
+material/0 = SubResource( 7 )

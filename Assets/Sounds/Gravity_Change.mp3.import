@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Gravity_Change.mp3-aac66761816330459fa149c646e0ac38.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Gravity_Change.mp3"
+dest_files=[ "res://.import/Gravity_Change.mp3-aac66761816330459fa149c646e0ac38.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Gras1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/GrasLarge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/GrasHigh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/PlantGroundSmall.tscn" type="PackedScene" id=5]
+
+[node name="Preset_GrasPatch02" type="Spatial"]
+
+[node name="Gras1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0592115, 0, 0 )
+
+[node name="Gras4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.00187616, 0, 1.37809, 0, 1.37809, 0, -1.37809, 0, -0.00187616, 0.60072, 0, 1.20322 )
+
+[node name="Gras7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.13981, 0, 0.774584, 0, 1.37809, 0, -0.774584, 0, 1.13981, -1.23109, 0, 0.535512 )
+
+[node name="Gras6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.22603, 0, -0.629282, 0, 1.37809, 0, 0.629282, 0, -1.22603, 1.56796, 0, 0.961795 )
+
+[node name="Gras3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.09793, 0, -1.12686, 0, 1.57329, 0, 1.12686, 0, 1.09793, -0.702173, 0, 0 )
+
+[node name="Gras5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.56389, 0, 0.171744, 0, 1.57329, 0, -0.171744, 0, -1.56389, -0.861843, 0, -1.08704 )
+
+[node name="GrasLarge" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.32324 )
+
+[node name="PlantGroundSmall" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.875042, 0, -0.484046, 0, 1, 0, 0.484046, 0, 0.875042, 0, 0, 0.706653 )
+
+[node name="GrasLarge2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.13335, 0, -1.10778, 0, 1.11578, 0, 1.10778, 0, 0.13335, 1.42687, 0, 0 )
+
+[node name="GrasHigh" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.790935, 0, -0.6119, 0, 1, 0, 0.6119, 0, -0.790935, 0.53039, 0, 0.119901 )
+
+[node name="GrasHigh2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.977061, 0, 0.746696, 0, 1.22972, 0, -0.746696, 0, -0.977061, -0.637459, 0, 1.08338 )
+
+[node name="Gras8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.262644, 0, -0.964893, 0, 1, 0, 0.964893, 0, 0.262644, 0.0507421, 0, 2.99779 )
+
+[node name="Gras9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.32922, 0, 0.363757, 0, 1.37809, 0, -0.363757, 0, 1.32922, -0.936909, 0, 3.95057 )
+
+[node name="Gras10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.04675, 0, -0.896355, 0, 1.37809, 0, 0.896355, 0, 1.04675, -0.773756, 0, 2.0077 )
+
+[node name="Gras11" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.929199, 0, 1.01771, 0, 1.37809, 0, -1.01771, 0, -0.929199, -0.44992, 0, 4.82045 )
+
+[node name="Gras12" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.798934, 0, -1.35535, 0, 1.57329, 0, 1.35535, 0, -0.798934, -0.118128, 0, 2.3774 )
+
+[node name="Gras13" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.245032, 0, 1.55409, 0, 1.57329, 0, -1.55409, 0, -0.245032, 0.888813, 0, 1.93783 )
+
+[node name="GrasLarge3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.262644, 0, -0.964893, 0, 1, 0, 0.964893, 0, 0.262644, 1.34308, 0, 2.70738 )
+
+[node name="PlantGroundSmall2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.237228, 0, -0.971453, 0, 1, 0, 0.971453, 0, -0.237228, -0.615551, 0, 3.24052 )
+
+[node name="GrasLarge4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.03387, 0, -0.41962, 0, 1.11578, 0, 0.41962, 0, -1.03387, 0.441052, 0, 4.4317 )
+
+[node name="GrasHigh3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.798152, 0, 0.602456, 0, 1, 0, -0.602456, 0, -0.798152, 0.0899057, 0, 3.59819 )
+
+[node name="GrasHigh4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.463862, 0, 1.13887, 0, 1.22972, 0, -1.13887, 0, 0.463862, -1.14648, 0, 2.72439 )

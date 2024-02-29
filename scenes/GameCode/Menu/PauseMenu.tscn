@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/GameCode/Menu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Data/Theme/THEME_GarretBold.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Data/Theme/THEME_DialogBox.tres" type="Theme" id=4]
+
+[sub_resource type="InputEventAction" id=1]
+action = "ui_cancel"
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="InputEventAction" id=3]
+action = "ui_cancel"
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[node name="PauseMenu" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 705.0
+margin_top = 330.0
+margin_right = 1214.0
+margin_bottom = 750.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+alignment = 1
+
+[node name="ButtonResume" type="Button" parent="VBoxContainer"]
+margin_right = 509.0
+margin_bottom = 102.0
+focus_neighbour_top = NodePath("../ButtonQuit")
+focus_neighbour_bottom = NodePath("../ButtonRestart")
+shortcut_in_tooltip = false
+shortcut = SubResource( 2 )
+text = "Resume"
+flat = true
+
+[node name="ButtonRestart" type="Button" parent="VBoxContainer"]
+margin_top = 106.0
+margin_right = 509.406
+margin_bottom = 208.0
+focus_neighbour_bottom = NodePath("../ButtonSettings")
+shortcut_in_tooltip = false
+text = "Restart Level"
+flat = true
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+margin_top = 212.0
+margin_right = 509.0
+margin_bottom = 314.0
+focus_neighbour_bottom = NodePath("../ButtonQuit")
+shortcut_in_tooltip = false
+text = "Settings"
+flat = true
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+margin_top = 318.0
+margin_right = 509.0
+margin_bottom = 420.0
+focus_neighbour_bottom = NodePath("../ButtonResume")
+shortcut_in_tooltip = false
+text = "Quit"
+flat = true
+
+[node name="Control" type="Control" parent="."]
+visible = false
+margin_left = 960.0
+margin_top = 540.0
+margin_right = 960.0
+margin_bottom = 540.0
+
+[node name="PopupPanel" type="PopupPanel" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.5
+margin_top = -75.0
+margin_right = 200.5
+margin_bottom = 75.0
+theme = ExtResource( 4 )
+popup_exclusive = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PopupPanel"]
+margin_right = 401.0
+margin_bottom = 150.0
+
+[node name="Label" type="Label" parent="Control/PopupPanel/VBoxContainer"]
+margin_right = 401.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Back to menu?"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PopupPanel/VBoxContainer"]
+margin_top = 77.0
+margin_right = 401.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+alignment = 1
+
+[node name="PopupButtonYes" type="Button" parent="Control/PopupPanel/VBoxContainer/HBoxContainer"]
+margin_right = 198.0
+margin_bottom = 73.0
+focus_neighbour_left = NodePath("../PopupButtonNo")
+focus_neighbour_right = NodePath("../PopupButtonNo")
+size_flags_horizontal = 3
+size_flags_vertical = 0
+shortcut_in_tooltip = false
+text = "Yes"
+
+[node name="PopupButtonNo" type="Button" parent="Control/PopupPanel/VBoxContainer/HBoxContainer"]
+margin_left = 202.0
+margin_right = 401.0
+margin_bottom = 73.0
+focus_neighbour_left = NodePath("../PopupButtonYes")
+focus_neighbour_right = NodePath("../PopupButtonYes")
+size_flags_horizontal = 3
+size_flags_vertical = 0
+shortcut_in_tooltip = false
+shortcut = SubResource( 4 )
+text = "No"
+
+[connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
+[connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_ButtonResume_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="pressed" from="Control/PopupPanel/VBoxContainer/HBoxContainer/PopupButtonYes" to="." method="_on_PopupButtonYes_pressed"]
+[connection signal="pressed" from="Control/PopupPanel/VBoxContainer/HBoxContainer/PopupButtonNo" to="." method="_on_PopupButtonNo_pressed"]

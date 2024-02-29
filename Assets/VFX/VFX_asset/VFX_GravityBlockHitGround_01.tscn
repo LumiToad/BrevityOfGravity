@@ -1,0 +1,149 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_spark02_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_flame04_01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_brownGround_01.tres" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_Scripts/VFX_GravityBlockHitGround_01.gd" type="Script" id=5]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_smoke09_01.png" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="Curve" id=41]
+_data = [ Vector2( 0, 0.643182 ), 0.0, 0.0, 0, 0, Vector2( 0.376404, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.674157, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.697727 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=42]
+curve = SubResource( 41 )
+
+[sub_resource type="ParticlesMaterial" id=50]
+direction = Vector3( 0, 0, 0 )
+spread = 57.92
+flatness = 0.69
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 15.0
+angular_velocity = 60.0
+angular_velocity_random = 0.14
+linear_accel = -20.0
+angle = 360.0
+angle_random = 1.0
+scale = 1.2
+scale_random = 1.0
+scale_curve = SubResource( 42 )
+color_ramp = ExtResource( 4 )
+
+[sub_resource type="QuadMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=49]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=52]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=51]
+direction = Vector3( 0, 0, 0 )
+spread = 57.92
+flatness = 0.69
+gravity = Vector3( 0, -2, 0 )
+initial_velocity = 10.0
+angular_velocity = 60.0
+angular_velocity_random = 0.14
+linear_accel = -10.0
+angle = 360.0
+angle_random = 1.0
+scale = 5.0
+scale_random = 0.37
+scale_curve = SubResource( 42 )
+color_ramp = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=45]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[node name="VFX_GravityBlockHitGround" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3637e-07, 0, 1.55989 )
+script = ExtResource( 5 )
+
+[node name="staub" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96909e-10, 0, -1.5 )
+material_override = SubResource( 1 )
+emitting = false
+amount = 70
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 50 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="staub2" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0477296, 0, -1.54369 )
+material_override = SubResource( 49 )
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 50 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="staub3" type="Particles" parent="."]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0.0477296, 0, -1.54369 )
+material_override = SubResource( 52 )
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 51 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="sparks2" type="Particles" parent="."]
+transform = Transform( -4.37114e-08, -0.173648, 0.984807, 0, 0.984808, 0.173648, -1, 7.5904e-09, -4.30473e-08, 1.3637e-07, 0, -1.55989 )
+material_override = SubResource( 45 )
+emitting = false
+amount = 25
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.85
+process_material = SubResource( 50 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="sparks3" type="Particles" parent="."]
+transform = Transform( -4.37114e-08, 0.173648, -0.984808, 0, 0.984808, 0.173648, 1, 7.5904e-09, -4.30473e-08, 1.3637e-07, 0, -1.55989 )
+material_override = SubResource( 45 )
+emitting = false
+amount = 25
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.85
+process_material = SubResource( 50 )
+draw_pass_1 = SubResource( 3 )

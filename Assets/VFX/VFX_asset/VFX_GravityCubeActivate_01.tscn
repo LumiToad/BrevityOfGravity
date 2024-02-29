@@ -1,0 +1,137 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_magic05_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_blueGravity_01.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_magic04_01.png" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_star02_01.png" type="Texture" id=4]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_Scripts/VFX_GravityCubeActivate_01.gd" type="Script" id=5]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_orangeGravity_01.tres" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=56]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.677273 ), 0.0, 0.0, 0, 0, Vector2( 0.247191, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.674157, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.577273 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=64]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=65]
+emission_shape = 2
+emission_box_extents = Vector3( 1.5, 1.5, 1.5 )
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity_random = 1.0
+linear_accel = -3.0
+radial_accel_random = 1.0
+tangential_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 64 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=59]
+
+[sub_resource type="SpatialMaterial" id=61]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=66]
+emission_shape = 2
+emission_box_extents = Vector3( 1.5, 1.5, 1.5 )
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity_random = 1.0
+linear_accel = -3.0
+radial_accel_random = 1.0
+tangential_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 64 )
+color_ramp = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=62]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=67]
+emission_shape = 2
+emission_box_extents = Vector3( 1.5, 1.5, 1.5 )
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity_random = 1.0
+linear_accel = -3.0
+radial_accel_random = 1.0
+tangential_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 64 )
+color_ramp = ExtResource( 2 )
+
+[node name="VFX_GravityCubeActivate" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+script = ExtResource( 5 )
+gravityStateDOWN = ExtResource( 2 )
+gravityStateUP = ExtResource( 6 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.00204201, -0.999998, 0, 0.999998, 0.00204201, 0, 0, 0 )
+material_override = SubResource( 56 )
+emitting = false
+amount = 500
+one_shot = true
+speed_scale = 5.0
+explosiveness = 1.0
+process_material = SubResource( 65 )
+draw_pass_1 = SubResource( 59 )
+
+[node name="Particles2" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.00204201, -0.999998, 0, 0.999998, 0.00204201, 0, 0, 0 )
+material_override = SubResource( 61 )
+emitting = false
+amount = 500
+one_shot = true
+speed_scale = 5.0
+process_material = SubResource( 66 )
+draw_pass_1 = SubResource( 59 )
+
+[node name="Particles3" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.00204201, -0.999998, 0, 0.999998, 0.00204201, 0, 0, 0 )
+material_override = SubResource( 62 )
+emitting = false
+amount = 150
+one_shot = true
+speed_scale = 5.0
+process_material = SubResource( 67 )
+draw_pass_1 = SubResource( 59 )

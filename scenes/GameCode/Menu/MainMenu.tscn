@@ -1,0 +1,178 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/GameCode/Menu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/2D/UI/UI_menu/UI_Circle_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Data/Theme/THEME_Garret.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/2D/UI/UI_menu/UI_Circle_02.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Data/Stylebox/STYLEBOX_ButtonFlat.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Data/DynFontData/DYNFONT_Garret.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/2D/UI/UI_menu/UI_BrevityOfGravityLogo_01.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Assets/fonts/Garet-Book.woff2"
+
+[sub_resource type="DynamicFont" id=4]
+size = 39
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/fonts/Garet-Book.woff2"
+
+[sub_resource type="DynamicFont" id=2]
+size = 88
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.623529, 0.623529, 0.623529, 1 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 0
+Button/fonts/font = SubResource( 4 )
+Button/fonts/hover = SubResource( 2 )
+Button/styles/disabled = ExtResource( 5 )
+Button/styles/focus = ExtResource( 5 )
+Button/styles/hover = ExtResource( 5 )
+Button/styles/normal = ExtResource( 5 )
+Button/styles/pressed = ExtResource( 5 )
+CheckBox/colors/font_color = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckBox/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 0
+CheckBox/fonts/font = ExtResource( 6 )
+CheckBox/icons/checked = ExtResource( 4 )
+CheckBox/icons/checked_disabled = ExtResource( 4 )
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_checked_disabled = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/radio_unchecked_disabled = null
+CheckBox/icons/unchecked = ExtResource( 2 )
+CheckBox/icons/unchecked_disabled = ExtResource( 2 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = ExtResource( 6 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.0875
+anchor_top = 0.117593
+anchor_right = 0.444271
+anchor_bottom = 0.827778
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource( 3 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_right = 685.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="ButtonPlayNewGame" type="Button" parent="VBoxContainer"]
+margin_top = 266.0
+margin_right = 685.0
+margin_bottom = 346.0
+focus_neighbour_top = NodePath("../ButtonQuit")
+focus_neighbour_bottom = NodePath("../ButtonResume")
+shortcut_in_tooltip = false
+text = "Play"
+flat = true
+
+[node name="ButtonResume" type="Button" parent="VBoxContainer"]
+margin_top = 350.0
+margin_right = 685.0
+margin_bottom = 430.0
+focus_neighbour_top = NodePath("../ButtonPlayNewGame")
+focus_neighbour_bottom = NodePath("../ButtonSettings")
+disabled = true
+shortcut_in_tooltip = false
+text = "Resume"
+flat = true
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+margin_top = 434.0
+margin_right = 685.0
+margin_bottom = 514.0
+focus_neighbour_top = NodePath("../ButtonResume")
+focus_neighbour_bottom = NodePath("../ButtonGallery")
+shortcut_in_tooltip = false
+text = "Settings"
+flat = true
+
+[node name="ButtonGallery" type="Button" parent="VBoxContainer"]
+margin_top = 518.0
+margin_right = 685.0
+margin_bottom = 598.0
+focus_neighbour_top = NodePath("../ButtonSettings")
+focus_neighbour_bottom = NodePath("../ButtonCredits")
+shortcut_in_tooltip = false
+text = "Gallery"
+
+[node name="ButtonCredits" type="Button" parent="VBoxContainer"]
+margin_top = 602.0
+margin_right = 685.0
+margin_bottom = 682.0
+focus_neighbour_top = NodePath("../ButtonGallery")
+focus_neighbour_bottom = NodePath("../ButtonQuit")
+shortcut_in_tooltip = false
+text = "Credits"
+flat = true
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+margin_top = 686.0
+margin_right = 685.0
+margin_bottom = 766.0
+focus_neighbour_top = NodePath("../ButtonCredits")
+focus_neighbour_bottom = NodePath("../ButtonPlayNewGame")
+shortcut_in_tooltip = false
+text = "Quit"
+flat = true
+
+[node name="ButtonLink" type="Button" parent="."]
+margin_left = 1560.0
+margin_top = 1016.0
+margin_right = 1912.0
+margin_bottom = 1073.0
+theme = SubResource( 6 )
+shortcut_in_tooltip = false
+text = "Visit our Website!"
+
+[connection signal="visibility_changed" from="." to="." method="_on_MainMenu_visibility_changed"]
+[connection signal="pressed" from="VBoxContainer/ButtonPlayNewGame" to="." method="_on_ButtonPlayNewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonResume" to="." method="_on_ButtonResume_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
+[connection signal="button_up" from="VBoxContainer/ButtonGallery" to="." method="_on_ButtonGallery_button_up"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredits" to="." method="_on_ButtonCredits_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="button_up" from="ButtonLink" to="." method="_on_ButtonLink_button_up"]

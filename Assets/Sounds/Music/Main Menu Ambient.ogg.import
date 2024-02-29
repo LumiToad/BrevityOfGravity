@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Main Menu Ambient.ogg-0718dfe04cf155ac8e4741b7072fb158.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Main Menu Ambient.ogg"
+dest_files=[ "res://.import/Main Menu Ambient.ogg-0718dfe04cf155ac8e4741b7072fb158.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

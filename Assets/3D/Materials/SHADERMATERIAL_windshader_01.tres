@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "// in case anyone reads this: I copied the shader from two online tutorials together and made \"asumptions\" where to change stuff in here.
+// not like i would not understand a single word, but i definitly can't say, what is exactly going on here.
+// the wind effect seems good enough though
+
+shader_type spatial;
+uniform vec2 amplitude = vec2(0.2, 0);
+uniform vec2 frequency = vec2(3.0, 2.5);
+uniform vec2 time_factor = vec2(2.0, 3.0);
+
+uniform sampler2D texturemap : hint_albedo;
+uniform vec2 texture_scale = vec2(4.0, 8.0);
+float height(vec2 pos, float time) {
+	return (amplitude.x * sin(pos.x * frequency.x + time * time_factor.x)) + (amplitude.x * sin(pos.x * frequency.x + time * time_factor.x));
+}
+void vertex() {
+	VERTEX.xy += height(VERTEX.yx, TIME) * (UV.x); // sample the height at the location of our vertex
+	TANGENT = normalize(vec3(0.0, height(VERTEX.xz + vec2(0.0, 0.2), TIME) - height(VERTEX.xz + vec2(0.0, -0.2), TIME), 0.4));
+	BINORMAL = normalize(vec3(0.4, height(VERTEX.xz + vec2(0.2, 0.0), TIME) - height(VERTEX.xz + vec2(-0.2, 0.0), TIME ), 0.0));
+	NORMAL = cross(TANGENT, BINORMAL);
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/amplitude = Vector2( 0.03, 5 )
+shader_param/frequency = Vector2( 3, 2.5 )
+shader_param/time_factor = Vector2( 2, 3 )
+shader_param/texture_scale = Vector2( 4, 8 )

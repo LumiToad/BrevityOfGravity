@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Data/DynFontData/DYNFONT_GarretBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Data/Stylebox/STYLEBOX_ButtonFlat.tres" type="StyleBox" id=2]
+
+[resource]
+default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.623529, 0.623529, 0.623529, 1 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/styles/disabled = ExtResource( 2 )
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 2 )

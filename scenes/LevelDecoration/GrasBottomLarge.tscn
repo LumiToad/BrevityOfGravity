@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/3D/Meshes/GrasBlocks/MESH_GrasBottomLarge_01.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_GrasBottomLarge_02.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[node name="GrasBottomLarge" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )

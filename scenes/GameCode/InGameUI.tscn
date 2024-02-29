@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/GameCode/InGameUI.gd" type="Script" id=1]
+[ext_resource path="res://Assets/2D/UI/UI_ingame_placeholder/UI_gravityHalf_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/2D/UI/UI_ingame_placeholder/UI_gravityEmpty_placeholder.png" type="Texture" id=3]
+[ext_resource path="res://Assets/2D/UI/UI_ingame_placeholder/UI_gravityFull_placeholder.png" type="Texture" id=4]
+[ext_resource path="res://Assets/2D/UI/UI_ingame_placeholder/UI_HPFull_placeholder.png" type="Texture" id=5]
+[ext_resource path="res://Assets/2D/UI/UI_ingame_placeholder/UI_HPEmpty_placeholder.png" type="Texture" id=6]
+[ext_resource path="res://Assets/2D/SPRITE_staff.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Data/Theme/THEME_GarretBold.tres" type="Theme" id=8]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Hearts",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "GravityChange",
+"speed": 4.97
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeInUI"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeOutUI"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="InGameUI" type="Control"]
+pause_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Heart1" type="AnimatedSprite" parent="CenterContainer"]
+position = Vector2( 72, 54.0997 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 2 )
+animation = "Hearts"
+frame = 1
+
+[node name="Heart2" type="AnimatedSprite" parent="CenterContainer"]
+position = Vector2( 168, 56 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 2 )
+animation = "Hearts"
+frame = 1
+
+[node name="Heart3" type="AnimatedSprite" parent="CenterContainer"]
+position = Vector2( 264, 56 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 2 )
+animation = "Hearts"
+frame = 1
+
+[node name="GravityUI" type="AnimatedSprite" parent="CenterContainer"]
+position = Vector2( 1811.7, 984 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 1 )
+animation = "GravityChange"
+
+[node name="gravityStaff" type="Sprite" parent="CenterContainer"]
+position = Vector2( 1816, 984 )
+rotation = 0.785397
+scale = Vector2( 0.161078, 0.161078 )
+texture = ExtResource( 7 )
+
+[node name="Coins" type="Label" parent="."]
+anchor_left = 0.804
+anchor_right = 0.912
+anchor_bottom = 0.119
+theme = ExtResource( 8 )
+text = "0"
+align = 2
+valign = 1
+max_lines_visible = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeInUI = SubResource( 3 )
+anims/FadeOutUI = SubResource( 4 )

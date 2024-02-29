@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/MESH_GravityCuboid_03.obj-ade6c9f7d9bdd3bd0cd89816662b3900.mesh"
+
+[deps]
+
+files=[ "res://.import/MESH_GravityCuboid_03.obj-ade6c9f7d9bdd3bd0cd89816662b3900.mesh" ]
+
+source_file="res://Assets/3D/Meshes/MESH_GravityCuboid_03.obj"
+dest_files=[ "res://.import/MESH_GravityCuboid_03.obj-ade6c9f7d9bdd3bd0cd89816662b3900.mesh", "res://.import/MESH_GravityCuboid_03.obj-ade6c9f7d9bdd3bd0cd89816662b3900.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/MESH_WallfillSingle_02.obj-be87abce6582fdc867f41ce1a982a0f0.mesh"
+
+[deps]
+
+files=[ "res://.import/MESH_WallfillSingle_02.obj-be87abce6582fdc867f41ce1a982a0f0.mesh" ]
+
+source_file="res://Assets/3D/Meshes/MESH_WallfillSingle_02.obj"
+dest_files=[ "res://.import/MESH_WallfillSingle_02.obj-be87abce6582fdc867f41ce1a982a0f0.mesh", "res://.import/MESH_WallfillSingle_02.obj-be87abce6582fdc867f41ce1a982a0f0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

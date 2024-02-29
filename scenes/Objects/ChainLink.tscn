@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="ChainLink" type="ConeTwistJoint"]
+collision/exclude_nodes = false
+swing_span = 25.0
+bias = 0.01
+softness = 16.0

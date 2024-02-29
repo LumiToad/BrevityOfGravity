@@ -1,0 +1,189 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_star08_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_flame04_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_blueGravity_01.tres" type="Texture" id=3]
+[ext_resource path="res://Assets/VFX/VFX_asset/VFX_Scripts/VFX_GravityCubeTrail_01.gd" type="Script" id=4]
+[ext_resource path="res://Assets/VFX/colorRamp/COLORRAMP_orangeGravity_01.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/VFX/Textures/TEXTURE_circle01_01.png" type="Texture" id=6]
+
+[sub_resource type="SpatialMaterial" id=36]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="Curve" id=37]
+_data = [ Vector2( 0, 0.522727 ), 0.0, 0.0, 0, 0, Vector2( 0.393258, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.657303, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.513636 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=28]
+curve = SubResource( 37 )
+
+[sub_resource type="ParticlesMaterial" id=46]
+render_priority = -1
+lifetime_randomness = 0.07
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.6
+initial_velocity_random = 0.4
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = -8.1
+angle = 360.0
+angle_random = 1.0
+scale = 0.8
+scale_curve = SubResource( 28 )
+color_ramp = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=39]
+
+[sub_resource type="SpatialMaterial" id=41]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=44]
+render_priority = -1
+lifetime_randomness = 0.07
+emission_shape = 1
+emission_sphere_radius = 1.5
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.6
+initial_velocity_random = 0.4
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = -8.1
+angle = 360.0
+angle_random = 1.0
+scale = 0.8
+scale_curve = SubResource( 28 )
+color_ramp = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=47]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=48]
+render_priority = -1
+lifetime_randomness = 0.07
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.6
+initial_velocity_random = 0.4
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = -8.1
+angle = 360.0
+angle_random = 1.0
+scale = 0.8
+scale_curve = SubResource( 28 )
+color_ramp = ExtResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=45]
+render_priority = -1
+lifetime_randomness = 0.07
+emission_shape = 1
+emission_sphere_radius = 1.5
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.6
+initial_velocity_random = 0.4
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = -8.1
+angle = 360.0
+angle_random = 1.0
+scale = 1.1
+scale_random = 1.0
+scale_curve = SubResource( 28 )
+color_ramp = ExtResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=43]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[node name="VFX_GravityCubeTrail" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Blue" type="Spatial" parent="."]
+
+[node name="rings" type="Particles" parent="Blue"]
+material_override = SubResource( 36 )
+amount = 120
+lifetime = 2.0
+local_coords = false
+process_material = SubResource( 46 )
+draw_pass_1 = SubResource( 39 )
+
+[node name="stars" type="Particles" parent="Blue"]
+material_override = SubResource( 41 )
+amount = 200
+lifetime = 3.0
+local_coords = false
+process_material = SubResource( 44 )
+draw_pass_1 = SubResource( 39 )
+
+[node name="stars2" type="Particles" parent="Blue"]
+material_override = SubResource( 47 )
+amount = 120
+local_coords = false
+process_material = SubResource( 48 )
+draw_pass_1 = SubResource( 39 )
+
+[node name="Orange" type="Spatial" parent="."]
+
+[node name="rings" type="Particles" parent="Orange"]
+material_override = SubResource( 36 )
+emitting = false
+amount = 120
+lifetime = 2.0
+local_coords = false
+process_material = SubResource( 45 )
+draw_pass_1 = SubResource( 39 )
+
+[node name="stars" type="Particles" parent="Orange"]
+material_override = SubResource( 41 )
+emitting = false
+amount = 200
+lifetime = 3.0
+local_coords = false
+process_material = SubResource( 45 )
+draw_pass_1 = SubResource( 39 )
+
+[node name="stars2" type="Particles" parent="Orange"]
+material_override = SubResource( 43 )
+emitting = false
+amount = 120
+local_coords = false
+process_material = SubResource( 45 )
+draw_pass_1 = SubResource( 39 )

@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_PillarSmallCore_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_PillarSmallBottom_01.png" type="Texture" id=2]
+[ext_resource path="res://Assets/3D/Textures/Environment/TEXTURE_PillarSmallTop_02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/3D/Meshes/EnvironmentDecoration/MESH_PillarSmall_01.obj" type="ArrayMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 2 )
+
+[node name="PillarSmall" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 4 )
+material/2 = SubResource( 3 )

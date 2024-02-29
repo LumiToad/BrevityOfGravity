@@ -1,0 +1,367 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/BG02_mid.tres" type="Shader" id=1]
+[ext_resource path="res://scenes/LevelDecoration/BG01_far.tres" type="Shader" id=2]
+[ext_resource path="res://scenes/LevelDecoration/BG02_far.tres" type="Shader" id=3]
+[ext_resource path="res://scenes/LevelDecoration/BG01_Sky.tres" type="Shader" id=4]
+[ext_resource path="res://Assets/2D/BG/BGFranziskus/BG02_Sky.png" type="Texture" id=5]
+[ext_resource path="res://scenes/LevelDecoration/BG01_mid.tres" type="Shader" id=6]
+[ext_resource path="res://scenes/LevelDecoration/BG03_Sky.tres" type="Shader" id=7]
+[ext_resource path="res://scenes/LevelDecoration/BG03_mid.tres" type="Shader" id=8]
+[ext_resource path="res://scenes/LevelDecoration/BG03_far.tres" type="Shader" id=9]
+[ext_resource path="res://scenes/LevelDecoration/BG04_mid.tres" type="Shader" id=10]
+[ext_resource path="res://scenes/LevelDecoration/BG04_sky.tres" type="Shader" id=11]
+[ext_resource path="res://scenes/LevelDecoration/BG04_far.tres" type="Shader" id=12]
+[ext_resource path="res://scenes/LevelDecoration/BG05_far.tres" type="Shader" id=13]
+[ext_resource path="res://scenes/LevelDecoration/BG05_mid.tres" type="Shader" id=14]
+[ext_resource path="res://scenes/LevelDecoration/BG05_sky.tres" type="Shader" id=15]
+[ext_resource path="res://Assets/2D/BG/BGFranziskus/GameBackground_BG_blur.png" type="Texture" id=16]
+[ext_resource path="res://Assets/2D/BG/BGFranziskus/GameBackground_Mid_blur.png" type="Texture" id=17]
+[ext_resource path="res://Assets/2D/BG/BGFranziskus/GameBackground_ForeGround_blur.png" type="Texture" id=18]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 6 )
+
+[sub_resource type="VisualShaderNodeTexture" id=11]
+texture = ExtResource( 5 )
+texture_type = 1
+
+[sub_resource type="VisualShader" id=20]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible, unshaded;
+
+uniform sampler2D tex_frg_2 : hint_albedo;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -104.366, -52.1033 )
+flags/unshaded = true
+nodes/fragment/0/position = Vector2( 600, 80 )
+nodes/fragment/2/node = SubResource( 11 )
+nodes/fragment/2/position = Vector2( 220, 40 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 20 )
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = ExtResource( 3 )
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=23]
+shader = ExtResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=26]
+shader = ExtResource( 9 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 8 )
+
+[sub_resource type="ShaderMaterial" id=32]
+shader = ExtResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=35]
+shader = ExtResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=38]
+shader = ExtResource( 10 )
+
+[sub_resource type="ShaderMaterial" id=41]
+shader = ExtResource( 15 )
+
+[sub_resource type="ShaderMaterial" id=44]
+shader = ExtResource( 13 )
+
+[sub_resource type="ShaderMaterial" id=47]
+shader = ExtResource( 14 )
+
+[sub_resource type="VisualShaderNodeTexture" id=48]
+texture = ExtResource( 16 )
+texture_type = 1
+
+[sub_resource type="VisualShader" id=49]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible, unshaded;
+
+uniform sampler2D tex_frg_2 : hint_albedo;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -211.118, -12.619 )
+flags/unshaded = true
+nodes/fragment/0/position = Vector2( 460, 20 )
+nodes/fragment/2/node = SubResource( 48 )
+nodes/fragment/2/position = Vector2( 64.7679, 120.08 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=50]
+shader = SubResource( 49 )
+
+[sub_resource type="VisualShaderNodeTexture" id=51]
+texture = ExtResource( 18 )
+texture_type = 1
+
+[sub_resource type="VisualShader" id=52]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible, unshaded;
+
+uniform sampler2D tex_frg_2 : hint_albedo;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ALPHA = n_out2p1;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -142.118, -83.619 )
+flags/unshaded = true
+nodes/fragment/2/node = SubResource( 51 )
+nodes/fragment/2/position = Vector2( 20, 20 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 1, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=53]
+shader = SubResource( 52 )
+
+[sub_resource type="VisualShaderNodeTexture" id=54]
+texture = ExtResource( 17 )
+texture_type = 1
+
+[sub_resource type="VisualShader" id=55]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx, async_visible, unshaded;
+
+uniform sampler2D tex_frg_2 : hint_albedo;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ALPHA = n_out2p1;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -330.118, 75.381 )
+flags/unshaded = true
+nodes/fragment/2/node = SubResource( 54 )
+nodes/fragment/2/position = Vector2( -60, 140 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 1, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=56]
+shader = SubResource( 55 )
+
+[node name="BGFranziskus" type="Spatial"]
+
+[node name="BG01" type="Spatial" parent="."]
+visible = false
+
+[node name="BG01 Sky" type="MeshInstance" parent="BG01"]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 13, -2.5, -64.25 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 4 )
+
+[node name="BG01 Far" type="MeshInstance" parent="BG01"]
+transform = Transform( 32.3, 0, 0, 0, -4.40611e-08, -19.152, 0, 1, -8.30516e-07, 13, -4.2, -20 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 8 )
+
+[node name="BG01 mid" type="MeshInstance" parent="BG01"]
+transform = Transform( 32.3, 0, 0, 0, -3.92584e-08, -17.0645, 0, 1, -8.30516e-07, 13, -6.3, 32.6 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
+
+[node name="BG02" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.6, 0, 0 )
+visible = false
+
+[node name="BG02 Sky" type="MeshInstance" parent="BG02"]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 13, -2.5, -64.25 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 13 )
+
+[node name="BG02 Far" type="MeshInstance" parent="BG02"]
+transform = Transform( 32.3, 0, 0, 0, -4.40611e-08, -19.152, 0, 1, -8.30516e-07, 13, -4.2, -20 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 16 )
+
+[node name="BG02 mid" type="MeshInstance" parent="BG02"]
+transform = Transform( 32.3, 0, 0, 0, -3.92584e-08, -17.0645, 0, 1, -8.30516e-07, 13, -6.3, 32.6 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 19 )
+
+[node name="BG03" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.6, 0, 0 )
+visible = false
+
+[node name="BG03 Sky" type="MeshInstance" parent="BG03"]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 77.6, -2.5, -64.25 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 23 )
+
+[node name="BG03 Far" type="MeshInstance" parent="BG03"]
+transform = Transform( 32.3, 0, 0, 0, -4.40611e-08, -19.152, 0, 1, -8.30516e-07, 77.7, -4.2, -20 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 26 )
+
+[node name="BG03 mid" type="MeshInstance" parent="BG03"]
+transform = Transform( 32.3, 0, 0, 0, -3.92584e-08, -17.0645, 0, 1, -8.30516e-07, 77.6, -6.3, 32.6 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 29 )
+
+[node name="BG04" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 193.8, 0, 0 )
+visible = false
+
+[node name="BG04 Sky" type="MeshInstance" parent="BG04"]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 13, -2.5, -64.25 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 32 )
+
+[node name="BG04 Far" type="MeshInstance" parent="BG04"]
+transform = Transform( 32.3, 0, 0, 0, -4.40611e-08, -19.152, 0, 1, -8.30516e-07, 13, -4.2, -20 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 35 )
+
+[node name="BG04 mid" type="MeshInstance" parent="BG04"]
+transform = Transform( 32.3, 0, 0, 0, -3.92584e-08, -17.0645, 0, 1, -8.30516e-07, 13, -6.3, 32.6 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 38 )
+
+[node name="BG05" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 258.3, 0, 0 )
+visible = false
+
+[node name="BG05 Sky" type="MeshInstance" parent="BG05"]
+transform = Transform( 32.3, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 13, -2.5, -64.25 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 41 )
+
+[node name="BG05 Far" type="MeshInstance" parent="BG05"]
+transform = Transform( 32.3, 0, 0, 0, -4.40611e-08, -19.152, 0, 1, -8.30516e-07, 13, -4.2, -20 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 44 )
+
+[node name="BG05 mid" type="MeshInstance" parent="BG05"]
+transform = Transform( 32.3, 0, 0, 0, -3.92584e-08, -17.0645, 0, 1, -8.30516e-07, 13, -6.3, 32.6 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 47 )
+
+[node name="BGBig" type="Spatial" parent="."]
+
+[node name="BG01 Sky" type="MeshInstance" parent="BGBig"]
+transform = Transform( 206.72, 0, 0, 0, -4.80825e-08, -20.9, 0, 1, -8.30516e-07, 13, -2.5, -64.25 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 50 )
+
+[node name="BG01 Far" type="MeshInstance" parent="BGBig"]
+transform = Transform( 205.654, 0, 0, 0, -4.40611e-08, -19.152, 0, 1, -8.30516e-07, 13, -4.2, 55.8545 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 53 )
+
+[node name="BG01 mid" type="MeshInstance" parent="BGBig"]
+transform = Transform( 205.174, 0, 0, 0, -4.71101e-08, -20.4774, 0, 1, -8.30516e-07, 13, -5, -20.9151 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 56 )

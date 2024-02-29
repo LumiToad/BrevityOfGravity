@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/3D/Meshes/MESH_PlatformSingle.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scenes/Objects/MovingPlatform.gd" type="Script" id=2]
+[ext_resource path="res://Assets/3D/Textures/TEXTURE_FloorTop_03.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="BoxShape" id=23]
+extents = Vector3( 1.5, 0.3, 2 )
+
+[sub_resource type="BoxShape" id=27]
+extents = Vector3( 1.5, 0.2, 2 )
+
+[node name="MovingPlatformSingle" type="Path"]
+curve = null
+script = ExtResource( 2 )
+
+[node name="PathFollow" type="PathFollow" parent="."]
+rotation_mode = 0
+loop = false
+
+[node name="KinematicBody" type="KinematicBody" parent="PathFollow"]
+collision_mask = 5
+axis_lock_motion_z = true
+move_lock_z = true
+moving_platform_apply_velocity_on_leave = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="PathFollow/KinematicBody"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 26 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PathFollow/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 23 )
+
+[node name="KinematicBody" type="KinematicBody" parent="PathFollow/KinematicBody"]
+collision_layer = 2
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="PathFollow/KinematicBody/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 27 )
+
+[node name="Tween" type="Tween" parent="."]
+playback_process_mode = 0

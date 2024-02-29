@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/MESH_Helmet_002.obj-d5a2dcb5d365ed281af63f7b44004929.mesh"
+
+[deps]
+
+files=[ "res://.import/MESH_Helmet_002.obj-d5a2dcb5d365ed281af63f7b44004929.mesh" ]
+
+source_file="res://Assets/3D/Meshes/MESH_Helmet_002.obj"
+dest_files=[ "res://.import/MESH_Helmet_002.obj-d5a2dcb5d365ed281af63f7b44004929.mesh", "res://.import/MESH_Helmet_002.obj-d5a2dcb5d365ed281af63f7b44004929.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

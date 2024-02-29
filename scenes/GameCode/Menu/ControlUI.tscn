@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Data/Theme/THEME_GarretBold.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/GameCode/Menu/ControlUI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/2D/UI/UI_ControlsScreen_01.png" type="Texture" id=3]
+
+[sub_resource type="InputEventAction" id=5]
+action = "ui_cancel"
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[node name="ControlUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Sprite" type="Sprite" parent="CenterContainer"]
+position = Vector2( 960, 544 )
+texture = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.25
+theme = ExtResource( 1 )
+alignment = 1
+
+[node name="Keyboard" type="Label" parent="HBoxContainer"]
+margin_top = 84.0
+margin_right = 958.0
+margin_bottom = 186.0
+size_flags_horizontal = 3
+text = "Keyboard"
+align = 1
+
+[node name="Controller" type="Label" parent="HBoxContainer"]
+margin_left = 962.0
+margin_top = 84.0
+margin_right = 1920.0
+margin_bottom = 186.0
+size_flags_horizontal = 3
+text = "Controller"
+align = 1
+
+[node name="ButtonBack" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 1 )
+shortcut = SubResource( 6 )
+text = "Back"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]

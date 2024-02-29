@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/LevelDecoration/Environment/Plants/Gras1.tscn" type="PackedScene" id=1]
+
+[node name="Preset_GrasPatch_03" type="Spatial"]
+
+[node name="Gras1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0592115, 0, 0 )
+
+[node name="Gras4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.28933, 0, 0.48658, 0, 1.37809, 0, -0.48658, 0, -1.28933, 0.257244, 0, 0.429586 )
+
+[node name="Gras3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.09793, 0, -1.12686, 0, 1.57329, 0, 1.12686, 0, 1.09793, -0.702173, 0, 0 )

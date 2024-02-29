@@ -1,0 +1,309 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/3D/Meshes/MESH_PlatformSingle.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scenes/Objects/ScriptedObjects/PlatformScripted.gd" type="Script" id=2]
+[ext_resource path="res://Assets/3D/Textures/TEXTURE_FloorTop_03.png" type="Texture" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 9, 1, 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Collapse"
+length = 1.2
+step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.19, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "addForce"
+}, {
+"args": [  ],
+"method": "setPlayerAnimation"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RigidBody:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 7.5, 0, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ), Vector3( 7.5, 0.25, 0 ), Vector3( 7.5, -0.25, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RigidBody2:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 4.5, 0, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ), Vector3( 4.5, -0.25, 0 ), Vector3( 4.5, 0.25, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RigidBody3:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.5, 0, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ), Vector3( 1.5, 0.25, 0 ), Vector3( 1.5, -0.25, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RigidBody4:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -1.5, 0, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ), Vector3( -1.5, -0.25, 0 ), Vector3( -1.5, 0.25, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("RigidBody5:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -4.5, 0, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ), Vector3( -4.5, 0.25, 0 ), Vector3( -4.5, -0.25, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("RigidBody6:translation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -7.5, 0, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ), Vector3( -7.5, -0.25, 0 ), Vector3( -7.5, 0.25, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("RigidBody:gravity_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.5 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("RigidBody2:gravity_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.5 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("RigidBody3:gravity_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.5 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("RigidBody4:gravity_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.5 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("RigidBody5:gravity_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.5 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("RigidBody6:gravity_scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.5 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Area:monitoring")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.5, 0.3, 2 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+
+[node name="PlatformScripted" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Collapse = SubResource( 4 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0 )
+collision_layer = 17
+collision_mask = 23
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="RigidBody2" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0 )
+collision_layer = 17
+collision_mask = 23
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody2"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="RigidBody3" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+collision_layer = 17
+collision_mask = 23
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody3"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="RigidBody4" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
+collision_layer = 17
+collision_mask = 23
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody4"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="RigidBody5" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0 )
+collision_layer = 17
+collision_mask = 23
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody5"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="RigidBody6" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0 )
+collision_layer = 17
+collision_mask = 23
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody6"]
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="EnableControlsTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="timeout" from="EnableControlsTimer" to="." method="_on_EnableControlsTimer_timeout"]
