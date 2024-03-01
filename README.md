@@ -26,8 +26,8 @@ https://github.com/LumiToad/BrevityOfGravity/assets/129980440/8723555e-7f94-41c4
   <h2>Responsiblities</h2>
   - The entire gameplay programming -<br /><br />
   Including UI, Features, everything.<br />
-  Since I started learning programming only a few month prior, I had some help from teachers, implementation was still my responsibility.<br />
-  <br />
+  Since I started learning programming only a few month prior, I had some help from teachers.<br />
+  But the implementation was still my responsibility.<br /><br />
   - Create tools, using Godot features -<br /><br />
   Created tools for level / game design, such as:<br />
     <li>Camera Control Zones</li>
@@ -40,7 +40,8 @@ https://github.com/LumiToad/BrevityOfGravity/assets/129980440/8723555e-7f94-41c4
     <br />
   - Communication with artists and game designers -<br /><br />
   As a small Team of seven people, everyone was involved with Game design.<br />
-  Some initial ideas, the chains and some level design guidelines and the documentation of these concepts were part of my work.<br />
+  Some initial ideas, the chains and some level design guidelines,<br />
+  as well as the documentation of these concepts were part of my work.<br />
   Game design however was not my main responsibility.<br /><br />
   Explaining tools, communicate about file formats, implementation of assets and solving other problems was daily business.<br /><br />
   - Administrative work -<br /><br />
