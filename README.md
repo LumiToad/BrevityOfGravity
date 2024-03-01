@@ -3,10 +3,10 @@
   <h1>Brevity of Gravity</h1>
 
   <a href="https://brevity-of-gravity.school4games.net/">
-    <img src="https://github.com/LumiToad/LumiToad/blob/main/img/banner/github_brevity_banner.png" />
+    <img src="https://github.com/LumiToad/LumiToad/blob/main/img/banner/github_brevity_banner.png" alt="brevity banner" />
   </a>
 
-  <a href="https://s4g.itch.io/brevity-of-gravity"></a>
+  <a href="https://s4g.itch.io/brevity-of-gravity"><img src="https://github.com/LumiToad/LumiToad/blob/main/img/itch/brevity.png" alt="itch page" /></a>
   
   <p>
     Heyho! <br />
