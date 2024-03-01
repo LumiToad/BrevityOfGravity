@@ -60,5 +60,9 @@ https://github.com/LumiToad/BrevityOfGravity/assets/129980440/8723555e-7f94-41c4
   <a href="https://s4g.itch.io/brevity-of-gravity">
     <img src="https://github.com/LumiToad/LumiToad/blob/main/img/itch/brevity.png" alt="itch page" />
   </a>
+
+  Artworks by Maresa Althof (Member of the dev team)<br />
+  - https://www.artstation.com/maresaalthof
+  - https://www.linkedin.com/in/maresa-althof-3539a2253/
   
 </div>
