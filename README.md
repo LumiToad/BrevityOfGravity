@@ -6,6 +6,10 @@
     This game was developed as a student project in 10 weeks at the <a href="https://www.school4games.net">School For Games</a> in Berlin! <br />
     This was my first non-theory encounter with object oriented programming, Game Design, Blender, 3D modeling and so on. <br /> <br />
   </p>
+  
+
+https://github.com/LumiToad/BrevityOfGravity/assets/129980440/8723555e-7f94-41c4-b3c0-b3bc380f8ad1
+
 
   <hr />
   <h2>Engines / Languages</h2>
