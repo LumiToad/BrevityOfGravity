@@ -13,7 +13,7 @@ https://github.com/LumiToad/BrevityOfGravity/assets/129980440/8723555e-7f94-41c4
 
   <hr />
   <h2>Engines / Languages</h2>
-  Godot, GDScript, a tiny amount of GLSL
+  Godot 3.5.2, GDScript, a tiny amount of GLSL
 
   <hr />
   <h2>Roles</h2>
